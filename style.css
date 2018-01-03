@@ -1,0 +1,55 @@
+body {
+   margin: 0px 0px 0px 0px;
+   height: 100vh;
+   width: 100vw;
+   font-family: 'Quattrocento Sans', sans-serif;
+}
+
+#container {
+    width: 100vh;
+}
+
+/* .headerPicture {
+    width: 100%;
+    height: 10em;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+} */
+
+.meny {
+    height: 2em;
+    width: 100%;
+}
+
+.menyList {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    background-color: brown;
+    height: 2em;
+    list-style: none;
+           
+}
+
+.productMenyList {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    list-style: none;
+}
+
+.productCardImg {
+    height: 200px;
+    width: 200px;
+}
+
+.productContainer {
+    height: 200px;
+    width: 200px;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+}

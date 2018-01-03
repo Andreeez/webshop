@@ -1,0 +1,68 @@
+[
+    {
+        "id": 1,
+        "subCategory": "Atomic",
+        "mainCategory": 1
+        
+    },{
+        "id": 2,
+        "subCategory": "Rossignol",
+        "mainCategory": 1
+    },{
+        "id": 3,
+        "subCategory": "Salomon",
+        "mainCategory": 1
+    },{
+        "id": 4,
+        "subCategory": "K2",
+        "mainCategory": 1
+    },{
+        "id": 5,
+        "subCategory": "Atomic",
+        "mainCategory": 2
+    },{
+        "id": 6,
+        "subCategory": "Scott",
+        "mainCategory": 2
+    },{
+        "id": 7,
+        "subCategory": "Salomon",
+        "mainCategory": 2
+    },{
+        "id": 8,
+        "subCategory": "Nordica",
+        "mainCategory": 2
+    },{
+        "id": 9,
+        "subCategory": "Skidjacka",
+        "mainCategory": 3
+    },{
+        "id": 10,
+        "subCategory": "Skidbyxor",
+        "mainCategory": 3
+    },{
+        "id": 11,
+        "subCategory": "Underställ",
+        "mainCategory": 3
+    },{
+        "id": 12,
+        "subCategory": "Övriga kläder",
+        "mainCategory": 3
+    },{
+        "id": 13,
+        "subCategory": "Skidhjälm",
+        "mainCategory": 4
+    },{
+        "id": 14,
+        "subCategory": "Skidglasögon",
+        "mainCategory": 4
+    },{
+        "id": 15,
+        "subCategory": "Stavar",
+        "mainCategory": 4
+    },{
+        "id": 16,
+        "subCategory": "Tillbehör",
+        "mainCategory": 4
+    }
+]

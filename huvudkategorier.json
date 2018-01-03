@@ -1,0 +1,15 @@
+[
+    {
+        "id": 1,
+        "mainCategory": "Skidor"
+    },{
+        "id": 2,
+        "mainCategory": "Pjäxor"
+    },{
+        "id": 3,
+        "mainCategory": "Kläder"
+    },{
+        "id": 4,
+        "mainCategory": "Tillbehör"
+    }
+]
