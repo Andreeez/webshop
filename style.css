@@ -51,19 +51,30 @@ body {
 .productMenyList a:hover {
     color: red;
 }
-.productCardImg {
+.productImage {
     height: 200px;
     width: 200px;
 }
+.cardProductImage {
+    height: 400px;
+    width: 400px;
+}
+
 
 .productContainer {
     height: 200px;
     width: 200px;
 }
 
+.cardProductBox{
+    width: 400px;
+    height: 400px;
+}
+
 .content {
     display: flex;
     justify-content: center;
     flex-direction: row;
+    height: 100vh;
     
 }

@@ -5,7 +5,7 @@
         "prodDesc": "Varm och skyddande skidjacka i vattentätt material (10 000 mm vattenpelare). Avtagbar huva, snölås i midjan och flera praktiska fickor.",
         "prodPrice": 3000,
         "mainCategory": 3,
-        "subCategory": 9,
+        "subCategory": 3.1,
         "image": "salomonjacka1.jpg"
     },{
         "id": 2,
@@ -13,7 +13,7 @@
         "prodDesc": "Varm, allsidig och vändbar Primaloft-jacka för herrar. Stretchparti i sidorna för ökad komfort, och huva med integrerad krage för extra skydd.",
         "prodPrice": 799,
         "mainCategory": 3,
-        "subCategory": 9,
+        "subCategory": 3.1,
         "image": "salomonjacka2.jpg"
     }, {
         "id": 3,
@@ -21,7 +21,7 @@
         "prodDesc": "Varm, allsidig och vändbar Primaloft-jacka för damer. Stretchparti i sidorna för ökad komfort, och huva med integrerad krage för extra skydd",
         "prodPrice": 799,
         "mainCategory": 3,
-        "subCategory": 9,
+        "subCategory": 3.1,
         "image": "salomonjacka3.jpg"
     }, {
         "id": 4,
@@ -29,7 +29,7 @@
         "prodDesc": "Teknisk, varm skidjacka i vatten- och vindtätt material (20 000 mm vattenpelare). Snölås i midjan och flera praktiska fickor.",
         "prodPrice": 3299,
         "mainCategory": 3,
-        "subCategory": 9,
+        "subCategory": 3.1,
         "image": "salomonjacka4.jpg"
     }, {
         "id": 5,
@@ -37,7 +37,7 @@
         "prodDesc": "Mycket lätt topptursskida med bra precision och prestanda, både uppför och nedför. Allmountain-rocker, step down sidewall. Levereras med stighud i mohair. Vikt 1 250 gram.",
         "prodPrice": 4999,
         "mainCategory": 1,
-        "subCategory": 1,
+        "subCategory": 1.1,
         "image": "skidaatomic1.jpg"
     }, {
         "id": 6,
@@ -45,7 +45,7 @@
         "prodDesc": "Mycket lätt topptursskida med bra precision och prestanda, både uppför och nedför. Smalare modell, anpassad för damer. Allmountain rocker. Vikt 1 030 gram.",
         "prodPrice": 4999,
         "mainCategory": 1,
-        "subCategory": 1,
+        "subCategory": 1.1,
         "image": "skidaatomic2.jpg"
     }, {
         "id": 7,
@@ -53,7 +53,7 @@
         "prodDesc": "Carvingskida med kort radie, för korta och mellanstora svängar. Unik skida för dig som vill svänga mycket och känna kraften i varje sväng. Radie 13 meter.",
         "prodPrice": 6999,
         "mainCategory": 1,
-        "subCategory": 2,
+        "subCategory": 1.2,
         "image": "skidarossignol1.jpg"
     }, {
         "id": 8,
@@ -61,7 +61,7 @@
         "prodDesc": "Lätt, smidig allmountainskida med bindning, för hög fart och puder. Allsidig skida för alla typer av terräng, lös och hård snö. Z12-bindning medföljer. Vikt 1620 gram.",
         "prodPrice": 7399,
         "mainCategory": 1,
-        "subCategory": 3,
+        "subCategory": 1.3,
         "image": "salomonskida1.jpg"
     }, {
         "id": 9,
@@ -69,7 +69,7 @@
         "prodDesc": "Teknisk, varm skidjacka i vatten- och vindtätt material (20 000 mm vattenpelare). Snölås i midjan och flera praktiska fickor.",
         "prodPrice": 4999,
         "mainCategory": 1,
-        "subCategory": 4,
+        "subCategory": 1.4,
         "image": "skidak21.jpg"
     },{
         "id": 10,
@@ -77,7 +77,7 @@
         "prodDesc": "Teknisk, varm skidjacka i vatten- och vindtätt material (20 000 mm vattenpelare). Snölås i midjan och flera praktiska fickor.",
         "prodPrice": 4299,
         "mainCategory": 2,
-        "subCategory": 5,
+        "subCategory": 2.1,
         "image": "pjaxaatomic1.jpg"
     },{
         "id": 11,
@@ -85,7 +85,7 @@
         "prodDesc": "Teknisk, varm skidjacka i vatten- och vindtätt material (20 000 mm vattenpelare). Snölås i midjan och flera praktiska fickor.",
         "prodPrice": 5799,
         "mainCategory": 2,
-        "subCategory": 6,
+        "subCategory": 2.2,
         "image": "pjaxascott1.jpg"
     },{
         "id": 12,
@@ -93,7 +93,7 @@
         "prodDesc": "Teknisk, varm skidjacka i vatten- och vindtätt material (20 000 mm vattenpelare). Snölås i midjan och flera praktiska fickor.",
         "prodPrice": 199,
         "mainCategory": 2,
-        "subCategory": 7,
+        "subCategory": 2.3,
         "image": "pjaxasalomon1.jpg"
     },{
         "id": 13,
@@ -101,7 +101,7 @@
         "prodDesc": "Teknisk, varm skidjacka i vatten- och vindtätt material (20 000 mm vattenpelare). Snölås i midjan och flera praktiska fickor.",
         "prodPrice": 2299,
         "mainCategory": 2,
-        "subCategory": 8,
+        "subCategory": 2.4,
         "image": "pjaxanordica1.jpg"
     },{
         "id": 14,
@@ -109,7 +109,7 @@
         "prodDesc": "Teknisk, varm skidjacka i vatten- och vindtätt material (20 000 mm vattenpelare). Snölås i midjan och flera praktiska fickor.",
         "prodPrice": 999,
         "mainCategory": 3,
-        "subCategory": 10,
+        "subCategory": 3.2,
         "image": "byxa1.jpg"
     }
 ]
