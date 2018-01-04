@@ -1,6 +1,7 @@
 $(document).ready(function(){
     
     var categoryList;
+    var shoppingCart = [];
 //Fetch huvudkategori
     fetch("huvudkategorier.json")
         .then(function(response){
@@ -27,70 +28,182 @@ $(document).ready(function(){
         .then(function(produkter){
             productList = produkter;
         });
-//Funktion, tar fram Huvudkategorier (meny rad)
-    function showMainCategory(){
-        console.log("hejejeje");
-        $(".menyList").append("<li><a href='#'>Start</a></li>");
-        for(var i = 0; i < categoryList.length; i++){
-            var mainCategoryName = "<li class='menuItems' onclick='showUnderCategoryList(" + [i] + "); showProductList(" + [i] + ")'><a href='#'>" + categoryList[i].mainCategory + "</a></li>";
-            $(".menyList").append(mainCategoryName);
-            console.log(mainCategoryName);
-            console.log("heehehe");
-        }   
-        $(".menyList").append("<li><a href='#'>Kontakt</a></li>");
-        $(".menyList").append("<li><a href='#'>Information</a></li>");
-//Funktion, ta fram Underkategorier
-        showUnderCategoryList = function(i){
-            $(".productMenyList").html("");
-            for(var index = 0; index < underCategoryList.length; index++){
-                var underCategoryName = "<li onclick='showProductList(" + underCategoryList[index].id + ")'><a href='#'>" + underCategoryList[index].subCategory + "</a></li>";
-            if(underCategoryList[index].mainCategory == i+1){
-                $(".productMenyList").append(underCategoryName);
-                console.log(underCategoryName);
-            }
-            }
-        }
-//Funktion visa produkter
-        console.log("hejejeje");
-        showProductList = function(i){
-            $(".content").html("");
-            for(var index = 0; index < productList.length; index++){
-                var productCardName = "<h2>" + productList[index].prodName  + "</h2>";
-                var productCardPrice = "<p>" + productList[index].prodPrice + " kr</p>";
-                var productDescription = "<p>" + productList[index].prodDesc + "</p>";
 
-                var productCardImage = "<img class='productCardImg' onclick='showProduct(" + productList[index].id + ")' src='/picture/" + productList[index].image + "'>";
-                var productCard = "<div class='productCard'>" + productCardImage + productCardName + productCardPrice + "</div>";
-                console.log(productCard);
 
-                if(productList[index].mainCategory == i+1){
-                    $(".content").append(productCard);
+
+           function showMainCategory(){
+
+                for(var i = 0; i < categoryList.length; i++){
+                    // $(".menyList").append("<li class='menuItems' onclick='showUnderCategory(" + categoryList[i].id + ")'>" + categoryList[i].mainCategory + "</div>");
+                    var mainCategoryName = "<li class='menuItems' onclick='showUnderCategory(" + [i] + "); showProductList(" + [i] + ")'><a href='#'>" + categoryList[i].mainCategory + "</a></li>";
+                            $(".menyList").append(mainCategoryName);
                 }
-                    else if (productList[index].subCategory == i){
-                        $(".content").append(productCard);
 
-                    }   
-                }
+                $(".menyList").append("<li><a href='#'>Start</a></li>");
+                $(".menyList").append("<li><a href='#'>Kontakt</a></li>");
+                $(".menyList").append("<li><a href='#'>Information</a></li>");
             }
-//Funktoon visa enskild produkt vid knapptryck
-            showProduct = function(i){
-                $(".content").html("");
-                for(var index = 0; index < productList.length; index++){
-                    var productName = "<h2>" + productList[index].prodName  + "</h2>";
-                    var productPrice = "<p>" + productList[index].prodPrice + " kr</p>";
-                    var productImage = "<img class='productCardImg' alt='" + productList[index].prodName + "' src='/picture/" + productList[index].image + "'>";
-                    var productDescription = "<p>" + productList[index].prodDesc + "</p>";
-                    var productContainer = "<div class='productContainer'>" + productName + "<hr class='productHR'>" + productPrice + productDescription + "</div>";
-                    // var productCartButton = "<button class='addToCartButton' onclick='addToCart("+ productList[index].id + ")'> Köp produkt</button>";
-                    if (productList[index].id == i){
-                        $(".content").append(productImage);
-                        $(".content").append(productContainer);
+
+            // function showMainCategory(){
+                //     console.log("hejejeje");
+                //     $(".menyList").append("<li><a href='#'>Start</a></li>");
+                //     for(var i = 0; i < categoryList.length; i++){
+                //         var mainCategoryName = "<li class='menuItems' onclick='showUnderCategoryList(" + [i] + "); showProductList(" + [i] + ")'><a href='#'>" + categoryList[i].mainCategory + "</a></li>";
+                //         $(".menyList").append(mainCategoryName);
+                //         console.log(mainCategoryName);
+                //         console.log("heehehe");
+                //     }   
+                //     $(".menyList").append("<li><a href='#'>Kontakt</a></li>");
+                //     $(".menyList").append("<li><a href='#'>Information</a></li>");
+
+
+             showUnderCategory = function (i){
+                $(".productMenyList").html("");
+                // $(".content").html("");
+
+                for(var i = 0; i < underCategoryList.length; i++){
+                    var underCategoryName = "<li onclick='showProductList(" + underCategoryList[i].id + ")'><a href='#'>" + underCategoryList[i].subCategory + "</a></li>";
+
+                    if(underCategoryList[i].mainCategory == i+1){
+                        // $(".productMenyList").append("<li onclick='showProductList(" + underCategoryList[i].id +")'>" + underCategoryList[i].subCategory + "</div>");
+                        $(".productMenyList").append(underCategoryName);
+
+        // showUnderCategoryList = function(i){
+        //     $(".productMenyList").html("");
+        //     for(var index = 0; index < underCategoryList.length; index++){
+        //         var underCategoryName = "<li onclick='showProductList(" + underCategoryList[index].id + ")'><a href='#'>" + underCategoryList[index].subCategory + "</a></li>";
+        //     if(underCategoryList[index].mainCategory == i+1){
+        //         $(".productMenyList").append(underCategoryName);
+        //         console.log(underCategoryName);
+
                     }
                 }
+
             }
 
+            showProductList = function (i){
+                $(".content").html("");
+
+                for(var i= 0; i < productList.length; i++){
+                    var productCardName = "<h2>" + productList[i].prodName  + "</h2>";
+                    var productCardPrice = "<p>" + productList[i].prodPrice + " kr</p>";
+                    var productDescription = "<p>" + productList[i].prodDesc + "</p>";
+    
+                    var productCardImage = "<img class='productCardImg' onclick='showProducts(" + productList[i].id + ")' src='/picture/" + productList[i].image + "'>";
+                    var productCard = "<div class='productCard'>" + productCardImage + productCardName + productCardPrice + "</div>";
+    
+                    if(productList[i].mainCategory == i+1){
+                        $(".content").append(productCard);
+                    }   
+                        else if (productList[i].subCategory == i){
+                            $(".content").append(productCard);
+                        }
+                console.log(productCard);
+
+
+
+// showProductList = function(i){
+        //     $(".content").html(" ");
+        //     for(var index = 0; index < productList.length; index++){
+        //         var productCardName = "<h2>" + productList[index].prodName  + "</h2>";
+        //         var productCardPrice = "<p>" + productList[index].prodPrice + " kr</p>";
+        //         var productDescription = "<p>" + productList[index].prodDesc + "</p>";
+
+        //         var productCardImage = "<img class='productCardImg' onclick='showProduct(" + productList[index].id + ")' src='/picture/" + productList[index].image + "'>";
+        //         var productCard = "<div class='productCard'>" + productCardImage + productCardName + productCardPrice + "</div>";
+        //         console.log(productCard);
+
+        //         if(productList[index].mainCategory == i+1){
+        //             $(".content").append(productCard);
+        //         }
+        //             else if (productList[index].subCategory == i){
+        //                 $(".content").append(productCard);
+
+                        // $(".content").append("<div class='productBox' onclick='showProducts("+ productList[i].id +")'>" + "<img class='productPicture' src='/picture' (" + productList[i].image +")>" + productList[i].prodName + "</div>");
+                            //var productCardImage = "<img class='productCardImg' onclick='showProduct(" + productList[index].id + ")' src='/picture/" + productList[index].image + "'>";
+
+                    
+                }
+            }
+
+            showProducts = function (val){
+                $(".content").html("");
+
+                for(var i = 0; i < productList.length; i++){
+                    if(productList[i].id == val){
+                            var productCardName = "<h2>" + productList[i].prodName  + "</h2>";
+                            var productCardPrice = "<p>" + productList[i].prodPrice + " kr</p>";
+                            var productDescription = "<p>" + productList[i].prodDesc + "</p>";
+                            var productCardImage = "<img class='productCardImg' onclick='showProduct(" + productList[i].id + ")' src='/picture/" + productList[i].image + "'>";
+                            var productCard = "<div class='productCard'>" + productCardImage + productCardName + productCardPrice + "</div>";
+                            $(".content").append(productCard);
+                    }
+                }
+            } 
+//Funktion, tar fram Huvudkategorier (meny rad)
+    // function showMainCategory(){
+    //     console.log("hejejeje");
+    //     $(".menyList").append("<li><a href='#'>Start</a></li>");
+    //     for(var i = 0; i < categoryList.length; i++){
+    //         var mainCategoryName = "<li class='menuItems' onclick='showUnderCategoryList(" + [i] + "); showProductList(" + [i] + ")'><a href='#'>" + categoryList[i].mainCategory + "</a></li>";
+    //         $(".menyList").append(mainCategoryName);
+    //         console.log(mainCategoryName);
+    //         console.log("heehehe");
+    //     }   
+    //     $(".menyList").append("<li><a href='#'>Kontakt</a></li>");
+    //     $(".menyList").append("<li><a href='#'>Information</a></li>");
+//Funktion, ta fram Underkategorier
+        // showUnderCategoryList = function(i){
+        //     $(".productMenyList").html("");
+        //     for(var index = 0; index < underCategoryList.length; index++){
+        //         var underCategoryName = "<li onclick='showProductList(" + underCategoryList[index].id + ")'><a href='#'>" + underCategoryList[index].subCategory + "</a></li>";
+        //     if(underCategoryList[index].mainCategory == i+1){
+        //         $(".productMenyList").append(underCategoryName);
+        //         console.log(underCategoryName);
+        //     }
+        //     }
+        // }
+//Funktion visa produkter
+        // console.log("hejejeje");
+        // showProductList = function(i){
+        //     $(".content").html(" ");
+        //     for(var index = 0; index < productList.length; index++){
+        //         var productCardName = "<h2>" + productList[index].prodName  + "</h2>";
+        //         var productCardPrice = "<p>" + productList[index].prodPrice + " kr</p>";
+        //         var productDescription = "<p>" + productList[index].prodDesc + "</p>";
+
+        //         var productCardImage = "<img class='productCardImg' onclick='showProduct(" + productList[index].id + ")' src='/picture/" + productList[index].image + "'>";
+        //         var productCard = "<div class='productCard'>" + productCardImage + productCardName + productCardPrice + "</div>";
+        //         console.log(productCard);
+
+        //         if(productList[index].mainCategory == i+1){
+        //             $(".content").append(productCard);
+        //         }
+        //             else if (productList[index].subCategory == i){
+        //                 $(".content").append(productCard);
+
+        //             }   
+        //         }
+        //     }
+//Funktoon visa enskild produkt vid knapptryck
+        //     showProduct = function(i){
+        //         $(".content").html(" ");
+        //         for(var index = 0; index < productList.length; index++){
+        //             var productName = "<h2>" + productList[index].prodName  + "</h2>";
+        //             var productPrice = "<p>" + productList[index].prodPrice + " kr</p>";
+        //             var productImage = "<img class='productCardImg' alt='" + productList[index].prodName + "' src='/picture/" + productList[index].image + "'>";
+        //             var productDescription = "<p>" + productList[index].prodDesc + "</p>";
+        //             var productContainer = "<div class='productContainer'>" + productName + "<hr class='productHR'>" + productPrice + productDescription + "</div>";
+        //             // var productCartButton = "<button class='addToCartButton' onclick='addToCart("+ productList[index].id + ")'> Köp produkt</button>";
+        //             if (productList[index].id == i){
+        //                 $(".content").append(productImage);
+        //                 $(".content").append(productContainer);
+        //             }
+        //         }
+        //     }
+
          
-        }
+        // }
 });
 
 

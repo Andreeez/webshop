@@ -17,7 +17,7 @@ body {
 
 } */
 
-.meny {
+ .meny {
     height: 2em;
     width: 100%;
 }
@@ -29,6 +29,7 @@ body {
     background-color: brown;
     height: 2em;
     list-style: none;
+    
            
 }
 
@@ -37,8 +38,19 @@ body {
     flex-direction: row;
     justify-content: space-around;
     list-style: none;
+    font-size: 2em;
+    text-decoration: none;
+    color: green;
+    font-size: 1em;
+    
 }
 
+.productMenyList a:active {
+    color: green;
+}
+.productMenyList a:hover {
+    color: red;
+}
 .productCardImg {
     height: 200px;
     width: 200px;
@@ -52,4 +64,6 @@ body {
 .content {
     display: flex;
     justify-content: center;
+    flex-direction: row;
+    
 }
