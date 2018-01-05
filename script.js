@@ -28,6 +28,8 @@ fetch("produkter.json")
         productList = produkter;
     });
 
+
+//Visa huvudkategorier    
     function showMainCategory(){
         $(".menyList").append("<li><a href='#'>Start</a></li>");
         for(var i = 0; i < categoryList.length; i++){
@@ -36,9 +38,10 @@ fetch("produkter.json")
         }
         $(".menyList").append("<li><a href='#'>Kontakt</a></li>");
         $(".menyList").append("<li><a href='#'>Information</a></li>");
+        $(".menyList").append("<li onclick='showShoppingCart()'><a href='#'>Kundvagn</a></li>");
 
     }
-
+// Visa underkategorier
     showUnderCategory = function(i){
         $(".productMenyList").html("");
         
@@ -51,7 +54,7 @@ fetch("produkter.json")
 
         }
     }
-
+//Visa produkter
     showProductList = function(i){
         $(".content").html("");
         
@@ -69,12 +72,10 @@ fetch("produkter.json")
                 $(".content").append(productCard);
                 
              }
-            
         }   
-      
-      
     }
 
+//Visa specifik produkt
     showSpecificProduct = function(i){
         $(".content").html("");
 
@@ -93,12 +94,51 @@ fetch("produkter.json")
         } 
     }
 
+
+//Lägg till produkter i localstorage för att visas i Varukorgen
     addToCart = function(i){
+        var product = productList[i]
+
+        shoppingCart.push(product);
+        console.log("addtoCart");
 
     }
 
+// Visa produkter som är sparade i localstorage 
+    showShoppingCart = function(){
+        
+        $(".content").html("<h1>Kundvagn</h1>");
+        $(".content").append("<div class='shoppingCartAllProducts'>"+"</div>")
+
+        $(".shoppingCartAllProducts").append("<div class='shoppingCartProduct'> "+ " </div>")
+        
 
 
+        var json_str = JSON.stringify(shoppingCart);
+        localStorage.shoppingCart = json_str;
 
+        var loopCart = JSON.parse(localStorage.shoppingCart);
+        for (var i = 0; i < loopCart.length; i++){
+            $(".shoppingCartProduct").append("<div class='shoppingCart'>" + loopCart[i].prodName + loopCart[i].prodPrice + "<a href='#' onClick='delCartItem(" + i + ")'>Ta bort</a>" + "</div>");
+
+        }
+        var totalPrice = 0;
+        var freightPrice = 55;
+
+        for(var i = 0; i < loopCart.length; i++ ){
+            totalPrice += loopCart[i].prodPrice;
+        }
+        totalPrice += freightPrice;
+
+        $(".shoppingCartAllProducts").append("<p>" + " Totalpris (varav frakt: 55kr) " + totalPrice  + " kr " + "</p>");
+        
+        console.log(totalPrice);       
+    }
+
+// Ta bort produkter i varukorgen
+    delCartItem = function(i){
+        shoppingCart.splice(i,1);
+        showShoppingCart();
+    }
 
 });

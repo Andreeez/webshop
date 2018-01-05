@@ -6,7 +6,9 @@ body {
 }
 
 #container {
-    width: 100vh;
+    width: 100%;
+    height: 100vh;
+   
 }
 
 /* .headerPicture {
@@ -64,11 +66,14 @@ body {
 .productContainer {
     height: 200px;
     width: 200px;
+    display: flex;
 }
 
 .cardProductBox{
     width: 400px;
     height: 400px;
+    display: flex;
+    
 }
 
 .content {
@@ -76,5 +81,6 @@ body {
     justify-content: center;
     flex-direction: row;
     height: 100vh;
+    
     
 }
