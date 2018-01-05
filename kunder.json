@@ -5,7 +5,12 @@
         "password": "12345"
     },{
         "id": 2,
-        "countryname": "test@test.com",
+        "email": "test@test.com",
         "password": "test"
+    },{
+        "id": 3,
+        "email": "test",
+        "password": "test"
+
     }
 ]
