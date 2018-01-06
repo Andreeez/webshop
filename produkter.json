@@ -35,7 +35,7 @@
         "id": 5,
         "prodName": "Skida Atomic",
         "prodDesc": "Backland 78 + Skins 17/18, topptursskida, herr",
-        "prodPrice": 4999,
+        "prodPrice": 5999,
         "mainCategory": 1,
         "subCategory": 1.1,
         "image": "skidaatomic1.jpg"
@@ -111,8 +111,8 @@
         "mainCategory": 3,
         "subCategory": 3.2,
         "image": "byxa1.jpg"
-    }, {
-        "id": 16,
+    },{
+        "id": 15,
         "prodName": "Underställ - Dam",
         "prodDesc": "Lifa Active Set, superunderställ dam",
         "prodPrice": 699,
@@ -120,7 +120,7 @@
         "subCategory": 3.3,
         "image": "understall1.jpg"
     },{
-        "id": 17,
+        "id": 16,
         "prodName": "Mössa - NHL",
         "prodDesc": "NHL Knitted Beanie 16-17, mössa",
         "prodPrice": 150,
@@ -128,7 +128,7 @@
         "subCategory": 3.4,
         "image": "mossa1.jpg"
     },{
-        "id": 18,
+        "id": 17,
         "prodName": "Hjälm",
         "prodDesc": "Aspect Blue 17/18, skidhjälm",
         "prodPrice": 499,
@@ -136,7 +136,7 @@
         "subCategory": 4.1,
         "image": "skidhjalm1.jpg"
     },{
-        "id": 19,
+        "id": 18,
         "prodName": "Skidglasögon",
         "prodDesc": "Tsar Black 17/18, universella skidglasögon, unisex",
         "prodPrice": 1499,
@@ -144,7 +144,7 @@
         "subCategory": 4.2,
         "image": "skidglasogon1.jpg"
     },{
-        "id": 20,
+        "id": 19,
         "prodName": "Skidstavar",
         "prodDesc": "Word Performance Aluminium, alpinstav 17/18",
         "prodPrice": 199,
@@ -152,7 +152,7 @@
         "subCategory": 4.3,
         "image": "skidstavar1.jpg"
     },{
-        "id": 21,
+        "id": 20,
         "prodName": "Rånarluva",
         "prodDesc": "Rim Light Balaclava, balaklava barn",
         "prodPrice": 299,
@@ -160,7 +160,7 @@
         "subCategory": 4.4,
         "image": "ronarluva1.jpg"
     },{
-        "id": 22,
+        "id": 21,
         "prodName": "Skida Atomic",
         "prodDesc": "Cloud 9 Woman + Litium 10 17/18, alpinskida, dam",
         "prodPrice": 4299,
@@ -168,7 +168,7 @@
         "subCategory": 1.1,
         "image": "skidaatomic3.jpg"
     },{
-        "id": 23,
+        "id": 22,
         "prodName": "Skida Atomic",
         "prodDesc": "Rando Skis Backland 85 , randonnéeskida",
         "prodPrice": 4499,
@@ -176,7 +176,7 @@
         "subCategory": 1.1,
         "image": "skidaatomic4.jpg"
     },{
-        "id": 24,
+        "id": 23,
         "prodName": "Skida Rossignol",
         "prodDesc": "Powah Jib By Rossignol, alpinskida för barn",
         "prodPrice": 1999,
@@ -184,7 +184,7 @@
         "subCategory": 1.2,
         "image": "skidarossignol2.jpg"
     },{
-        "id": 25,
+        "id": 24,
         "prodName": "Skida Rossignol",
         "prodDesc": "PCarv Mini Pink 17/18, alpinskida, barn",
         "prodPrice": 999,
@@ -192,7 +192,7 @@
         "subCategory": 1.2,
         "image": "skidarossignol3.jpg"
     },{
-        "id": 26,
+        "id": 25,
         "prodName": "Skida Rossignol",
         "prodDesc": "PCarv Kids Blue 17/18, alpinskida, barn/junior",
         "prodPrice": 1299,
@@ -200,7 +200,7 @@
         "subCategory": 1.2,
         "image": "skidarossignol4.jpg"
     },{
-        "id": 27,
+        "id": 26,
         "prodName": "Skida Salomon",
         "prodDesc": "Allmountain Skis QST Lumen 99 W 16/17, friåkningsskida, dam",
         "prodPrice": 4799,
@@ -208,13 +208,21 @@
         "subCategory": 1.3,
         "image": "salomonskida2.jpg"
     },{
-        "id": 28,
+        "id": 27,
         "prodName": "Skida Salomon",
         "prodDesc": "N QST 92 17/18, allmountainskida, unisex",
         "prodPrice": 4299,
         "mainCategory": 1,
         "subCategory": 1.3,
         "image": "salomonskida3.jpg"
+    },{
+        "id": 28,
+        "prodName": "Skida Salomon",
+        "prodDesc": "Allmountain Skis QST Lux 92 17/18, friåkningsskida, dam",
+        "prodPrice": 3999,
+        "mainCategory": 1,
+        "subCategory": 1.3,
+        "image": "salomonskida4.jpg"
     },{
         "id": 29,
         "prodName": "Skida Salomon",
@@ -225,14 +233,6 @@
         "image": "salomonskida4.jpg"
     },{
         "id": 30,
-        "prodName": "Skida Salomon",
-        "prodDesc": "Allmountain Skis QST Lux 92 17/18, friåkningsskida, dam",
-        "prodPrice": 3999,
-        "mainCategory": 1,
-        "subCategory": 1.3,
-        "image": "salomonskida4.jpg"
-    },{
-        "id": 31,
         "prodName": "Skida K2",
         "prodDesc": "Talkback 82 ECOre 17/18, topptursskida, dam",
         "prodPrice": 4999,
@@ -240,7 +240,7 @@
         "subCategory": 1.4,
         "image": "skidak22.jpg"
     },{
-        "id": 32,
+        "id": 31,
         "prodName": "Skida K2",
         "prodDesc": "Missconduct Jr FDT 7 17/18, twintip-skida, junior",
         "prodPrice": 2399,
@@ -248,7 +248,7 @@
         "subCategory": 1.4,
         "image": "skidak23.jpg"
     },{
-        "id": 33,
+        "id": 32,
         "prodName": "Skida K2",
         "prodDesc": "Rando Skis WayBack 88 16/17, toppturskida",
         "prodPrice": 3799,
@@ -256,7 +256,7 @@
         "subCategory": 1.4,
         "image": "skidak24.jpg"
     },{
-        "id": 34,
+        "id": 33,
         "prodName": "Pjäxa Atomic",
         "prodDesc": "Backland 17/18, toppturspjäxa, dam",
         "prodPrice": 4299,
@@ -264,7 +264,7 @@
         "subCategory": 2.1,
         "image": "pjaxaatomic2.jpg"
     },{
-        "id": 35,
+        "id": 34,
         "prodName": "Pjäxa Atomic",
         "prodDesc": "Redster Jr 60 Red 17/18, alpinpjäxa, junior",
         "prodPrice": 1699,
@@ -272,7 +272,7 @@
         "subCategory": 2.1,
         "image": "pjaxaatomic3.jpg"
     },{
-        "id": 36,
+        "id": 35,
         "prodName": "Pjäxa Atomic",
         "prodDesc": "Hawx Ultra XTD 90 Tech inserts 17/18, alpinpjäxa, dam",
         "prodPrice": 5299,
@@ -280,7 +280,7 @@
         "subCategory": 2.1,
         "image": "pjaxaatomic4.jpg"
     },{
-        "id": 37,
+        "id": 36,
         "prodName": "Pjäxa Scott",
         "prodDesc": "Radical Women 17/18, toppturspjäxa, dam",
         "prodPrice": 4299,
@@ -288,7 +288,7 @@
         "subCategory": 2.2,
         "image": "pjaxascott2.jpg"
     },{
-        "id": 38,
+        "id": 37,
         "prodName": "Pjäxa Scott",
         "prodDesc": "Radical 17/18, toppturspjäxa",
         "prodPrice": 4299,
@@ -296,7 +296,7 @@
         "subCategory": 2.2,
         "image": "pjaxascott3.jpg"
     },{
-        "id": 39,
+        "id": 38,
         "prodName": "Pjäxa Scott",
         "prodDesc": "TLT Speedfit 17/18, toppturspjäxa",
         "prodPrice": 5799,
@@ -304,7 +304,7 @@
         "subCategory": 2.2,
         "image": "pjaxascott4.jpg"
     },{
-        "id": 40,
+        "id": 39,
         "prodName": "Pjäxa Salomon",
         "prodDesc": "Alpine Boots Quest Pro 90 Women 17/18, alpinpjäxa, dam",
         "prodPrice": 3599,
@@ -312,7 +312,7 @@
         "subCategory": 2.3,
         "image": "pjaxasalomon2.jpg"
     },{
-        "id": 41,
+        "id": 40,
         "prodName": "Pjäxa Salomon",
         "prodDesc": "X Max Race 120 17/18, alpinpjäxa, herr",
         "prodPrice": 4999,
@@ -320,7 +320,7 @@
         "subCategory": 2.3,
         "image": "pjaxasalomon3.jpg"
     },{
-        "id": 42,
+        "id": 41,
         "prodName": "Pjäxa Salomon",
         "prodDesc": "Alpine Boots Ghost FS 100 , alpinpjäxa",
         "prodPrice": 4299,
@@ -328,7 +328,7 @@
         "subCategory": 2.3,
         "image": "pjaxasalomon4.jpg"
     },{
-        "id": 43,
+        "id": 42,
         "prodName": "Pjäxa Nordica",
         "prodDesc": "Alpine Boots NXT PRO 75 Woman 17/18, alpinpjäxa, dam",
         "prodPrice": 2299,
@@ -336,7 +336,7 @@
         "subCategory": 2.4,
         "image": "pjaxanordica2.jpg"
     },{
-        "id": 44,
+        "id": 43,
         "prodName": "Pjäxa Nordica",
         "prodDesc": "Speedmachine 120 17/18, alpinpjäxa",
         "prodPrice": 4599,
@@ -344,7 +344,7 @@
         "subCategory": 2.4,
         "image": "pjaxanordica3.jpg"
     },{
-        "id": 45,
+        "id": 44,
         "prodName": "Pjäxa Nordica",
         "prodDesc": "Speedmachine 100 17/18, alpinpjäxa",
         "prodPrice": 3499,
@@ -352,7 +352,7 @@
         "subCategory": 2.4,
         "image": "pjaxanordica4.jpg"
     },{
-        "id": 46,
+        "id": 45,
         "prodName": "Skidbyxa",
         "prodDesc": "Switch Cargo Pant, skidbyxa dam",
         "prodPrice": 1999,
@@ -360,7 +360,7 @@
         "subCategory": 3.2,
         "image": "byxa2.jpg"
     },{
-        "id": 47,
+        "id": 46,
         "prodName": "Skidbyxa",
         "prodDesc": "Oppdal Insulated Pant, skidbyxa dam",
         "prodPrice": 1999,
@@ -368,7 +368,7 @@
         "subCategory": 3.2,
         "image": "byxa3.jpg"
     },{
-        "id": 48,
+        "id": 47,
         "prodName": "Skidbyxa",
         "prodDesc": "Valdez Pant, skidbyxa herr",
         "prodPrice": 999,
@@ -376,7 +376,7 @@
         "subCategory": 3.2,
         "image": "byxa4.jpg"
     },{
-        "id": 49,
+        "id": 48,
         "prodName": "Underställ",
         "prodDesc": "Akeleie Half Zip, ullunderställ herr",
         "prodPrice": 749,
@@ -384,7 +384,7 @@
         "subCategory": 3.3,
         "image": "understall2.jpg"
     },{
-        "id": 50,
+        "id": 49,
         "prodName": "Underställ - Herr",
         "prodDesc": "Lifa Active Set, superunderställ herr",
         "prodPrice": 699,
@@ -392,7 +392,7 @@
         "subCategory": 3.3,
         "image": "understall3.jpg"
     },{
-        "id": 51,
+        "id": 50,
         "prodName": "Underställ",
         "prodDesc": "Balder Set, underställ herr",
         "prodPrice": 99,
@@ -400,7 +400,7 @@
         "subCategory": 3.3,
         "image": "understall4.jpg"
     },{
-        "id": 52,
+        "id": 51,
         "prodName": "Vantar",
         "prodDesc": "Biggles Kids Zip Mittens, vantar barn",
         "prodPrice": 199,
@@ -408,7 +408,7 @@
         "subCategory": 3.4,
         "image": "vantar1.jpg"
     },{
-        "id": 53,
+        "id": 52,
         "prodName": "Mössa",
         "prodDesc": "NHL Cuffed Pom Knit -17, mössa",
         "prodPrice": 299,
@@ -416,7 +416,7 @@
         "subCategory": 3.4,
         "image": "mossa2.jpg"
     },{
-        "id": 54,
+        "id": 53,
         "prodName": "Mössa",
         "prodDesc": "NHL Cuffed Pom Knit -17, mössa",
         "prodPrice": 299,
@@ -424,7 +424,7 @@
         "subCategory": 3.4,
         "image": "mossa3.jpg"
     },{
-        "id": 55,
+        "id": 54,
         "prodName": "Hjälm",
         "prodDesc": "Quiver Plus MIPS Usx 17/18, skidhjälm, unisex",
         "prodPrice": 999,
@@ -432,7 +432,7 @@
         "subCategory": 4.1,
         "image": "skidhjalm2.jpg"
     },{
-        "id": 56,
+        "id": 55,
         "prodName": "Hjälm",
         "prodDesc": "Quiver Plus Jr Mips 17/18, skidhjälm, junior",
         "prodPrice": 899,
@@ -440,7 +440,7 @@
         "subCategory": 4.1,
         "image": "skidhjalm3.jpg"
     },{
-        "id": 57,
+        "id": 56,
         "prodName": "Hjälm",
         "prodDesc": "QST Charge 17/18, skidhjälm, unisex",
         "prodPrice": 1299,
@@ -448,7 +448,7 @@
         "subCategory": 4.1,
         "image": "skidhjalm4.jpg"
     },{
-        "id": 58,
+        "id": 57,
         "prodName": "Skidglasögon",
         "prodDesc": "FDL Revent Red HD 17/18, skidglasögon, unisex",
         "prodPrice": 1499,
@@ -456,7 +456,7 @@
         "subCategory": 4.2,
         "image": "skidglasogon2.jpg"
     },{
-        "id": 59,
+        "id": 58,
         "prodName": "Skidglasögon",
         "prodDesc": "A Frame 2.0 White Prizm Rose 17/18, skidglasögon",
         "prodPrice": 1299,
@@ -464,7 +464,7 @@
         "subCategory": 4.2,
         "image": "skidglasogon3.jpg"
     },{
-        "id": 60,
+        "id": 59,
         "prodName": "Skidglasögon",
         "prodDesc": "Fact Sr 17/18, skidglasögon, unisex",
         "prodPrice": 349,
@@ -472,7 +472,7 @@
         "subCategory": 4.2,
         "image": "skidglasogon4.jpg"
     },{
-        "id": 61,
+        "id": 60,
         "prodName": "Skidstavar",
         "prodDesc": "Nationalteam Carbon 13 mm 17/18, alpinstav, unisex",
         "prodPrice": 849,
@@ -480,7 +480,7 @@
         "subCategory": 4.3,
         "image": "skidstavar2.jpg"
     },{
-        "id": 62,
+        "id": 61,
         "prodName": "Skidstavar",
         "prodDesc": "Carbon Shadow Green 17/18, alpinstav, unisex",
         "prodPrice": 649,
@@ -488,7 +488,7 @@
         "subCategory": 4.3,
         "image": "skidstavar3.jpg"
     },{
-        "id": 63,
+        "id": 62,
         "prodName": "Skidstavar",
         "prodDesc": "Powah Alpine pole Blue BY Rossignol, alpinstav för barn",
         "prodPrice": 199,
@@ -496,7 +496,7 @@
         "subCategory": 4.3,
         "image": "skidstavar4.jpg"
     },{
-        "id": 64,
+        "id": 63,
         "prodName": "Skidmask",
         "prodDesc": "Powershield Convert skidmask",
         "prodPrice": 399,
@@ -504,7 +504,7 @@
         "subCategory": 4.4,
         "image": "skidmask.jpg"
     },{
-        "id": 65,
+        "id": 64,
         "prodName": "Ansiktsmask",
         "prodDesc": "Powershield Facemask, ansiktsmask unisex",
         "prodPrice": 249,
@@ -512,7 +512,7 @@
         "subCategory": 4.4,
         "image": "ansiktsmask.jpg"
     },{
-        "id": 66,
+        "id": 65,
         "prodName": "GoPro Hero5",
         "prodDesc": "Action Cam HERO5 Black BLACK",
         "prodPrice": 3690,
