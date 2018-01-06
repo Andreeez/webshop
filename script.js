@@ -51,10 +51,12 @@ console.log("hej");
 
 $(".loggaUtKnapp").hide();
 if(sessionStorage.userId !=null){
-    goToCheckOut();
+    // goToCheckOut();
     $(".loggaUtKnapp").show();
-    
-    
+    $("#username").hide();
+    $("#password").hide();
+    $(".testKnapp").hide();
+    $(".register").hide();
     
     console.log("Du är redan inloggad");
 } else {
@@ -62,20 +64,23 @@ if(sessionStorage.userId !=null){
         console.log("Logga in?!?!?!?!?!");
         for(var i = 0; i < kundLista.length; i++){
             if($("#username").val() == kundLista[i].email && $("#password").val() == kundLista[i].password){
-                // sessionStorage.setItem("userId",$("#username").val() );
-                sessionStorage.userId == kundLista[i].email;
+                sessionStorage.setItem("userId",$("#username").val() );
+                // sessionStorage.userId == kundLista[i].email;
                 $(".loggaUtKnapp").show();
                 $("#username").hide();
                 $("#password").hide();
                 $(".testKnapp").hide();
-                    goToCheckOut();
+                $(".register").hide();
+                   
                     console.log("rätt");
             } else {
-               
+                alert("Fel lösen");
                 console.log("fellösen");
-                var forGotPassword = "<p>Har du glömt lösenord?</p>"
-                $("#header").append(forGotPassword);
-                
+                // var forGotPassword = "<p class='forGotPasswordLink'>Har du glömt lösenord?</p>"
+                // $("#header").append(forGotPassword);
+                // $(".forGotPasswordLink").click(function(){
+                //     registerMember();
+                // });
             }
         }
     });
@@ -88,6 +93,10 @@ $(".loggaUtKnapp").click(function(){
 
 });
 
+$(".register").click(function(){
+    registerMember();
+});
+
 
 // logIn(function(){
 //     if(kundLista.email == $("#username").val() && kundLista.password == $("#password").val(){
@@ -98,7 +107,7 @@ $(".loggaUtKnapp").click(function(){
 
 // var logIn = function(){
 //     var html
-//     html += "<div class='loginForm'>";
+//     html = "<div class='loginForm'>";
 //     html += "<form>";
 //     html += "<label>Användarnamn</label>";
 //     html += "<input id='username' type='text'/>";
@@ -146,7 +155,6 @@ $(".loggaUtKnapp").click(function(){
                 $(".productMenyList").append(underCatName);
                 console.log(underCatName);
             }
-
         }
     }
 //Visa produkter
@@ -249,10 +257,49 @@ goToCheckOut = function (){
     console.log("Inloggad- Gå till kassan");
    
     if(sessionStorage.userId != null){
+        addOrderToCheckOut();
+        
+        console.log("you are logedIn");
+    } else {
+        // $(".content").html("Skapa Inlogg");
+        registerMember();
+        // Ett steg som kan läggas till senare, om ejinloggad välj att kunna logga in och ett formulär öppnas upp på nytt
+        // var logInButton = "<button class='logInButton'>Logga in</button>" 
 
     }
 
 }
 
+//Bli Medlem
+registerMember = function(){
+    $(".content").html("");
+    console.log("Bli medlem");
+    $(".content").append("<p>Bli medlem</p>");
+    var content;
+    content = '<div class="registerForm">';
+    content += '<form>';
+    content += '<label>Namn</label>'
+    content += '<input class="registerName" text="text"></input>';
+    content += '<label>Email</label>';
+    content += '<input class="registerEmail text="text></input>';
+    content += '<label>Lösenord</label>';
+    content += '<input class="registerPassword" text="password"></input>';
+    content += '<button class="registerButton" onclick="sendRegister()">Regristrera</button>';
+    content += '</div>';
+    $(".content").append(content);
+
+}
+
+//Lägga produkter i checkout
+addOrderToCheckOut = function(){
+    $(".content").html("");
+    $(".content").append("<p>Tack för din order</p>");
+}
+
+sendRegister = function(){
+    console.log("Skicka till register")
+    alert("Skicka till register");
+}
 
 });
+

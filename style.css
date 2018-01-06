@@ -21,13 +21,13 @@ body {
 
  .meny {
     height: 2em;
-    width: 100%;
+    width: 500px;
 }
 
 .menyList {
     display: flex;
     justify-content: space-around;
-    width: 100%;
+    width: 500px;
     background-color: brown;
     height: 2em;
     list-style: none;
@@ -38,12 +38,13 @@ body {
 .productMenyList {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
     list-style: none;
     font-size: 2em;
     text-decoration: none;
     color: green;
     font-size: 1em;
+    width: 500px;
     
 }
 
