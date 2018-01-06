@@ -1,6 +1,8 @@
 $(document).ready(function(){
 var categoryList;
 var shoppingCart = [];
+var kundLista;
+var saveOrder= [];
 
 //Fetch huvudkategori
 fetch("huvudkategorier.json")
@@ -38,12 +40,92 @@ fetch("kunder.json")
        kundLista = kunder; 
     });
 
+//Kolla om kund är inloggad
+
+
+$(".testKnapp").click(function(){
+console.log("hej");
+});
+
+
+
+$(".loggaUtKnapp").hide();
+if(sessionStorage.userId !=null){
+    goToCheckOut();
+    $(".loggaUtKnapp").show();
+    
+    
+    
+    console.log("Du är redan inloggad");
+} else {
+    $(".testKnapp").click(function(){
+        console.log("Logga in?!?!?!?!?!");
+        for(var i = 0; i < kundLista.length; i++){
+            if($("#username").val() == kundLista[i].email && $("#password").val() == kundLista[i].password){
+                // sessionStorage.setItem("userId",$("#username").val() );
+                sessionStorage.userId == kundLista[i].email;
+                $(".loggaUtKnapp").show();
+                $("#username").hide();
+                $("#password").hide();
+                $(".testKnapp").hide();
+                    goToCheckOut();
+                    console.log("rätt");
+            } else {
+               
+                console.log("fellösen");
+                var forGotPassword = "<p>Har du glömt lösenord?</p>"
+                $("#header").append(forGotPassword);
+                
+            }
+        }
+    });
+}
+
+$(".loggaUtKnapp").click(function(){
+    sessionStorage.clear()
+    location.reload();
+    console.log("Töm local storage");
+
+});
+
+
+// logIn(function(){
+//     if(kundLista.email == $("#username").val() && kundLista.password == $("#password").val(){
+//         sessionStorage.setItem("userId");
+//         goToCheckOut();
+//     })
+// });
+
+// var logIn = function(){
+//     var html
+//     html += "<div class='loginForm'>";
+//     html += "<form>";
+//     html += "<label>Användarnamn</label>";
+//     html += "<input id='username' type='text'/>";
+//     html += "<label>Lösenord</label>";
+//     html += "<input id='password' type='text'/>";
+//     html += "<div class='logOut' onclick='signOut()'><i class='fa fa-sign-out'></i><br/>Logga ut</div>"
+//     html += "</div>";
+//     $("#header").append(html);
+// }
+
+
+
+// logIn();
+
+// $('#header').append('<button class="logIn">Logga in</button>');
 //Visa huvudkategorier    
     function showMainCategory(){
-                
-        $('#header').append('<div class="logOut" onclick="signOut()"><i class="fa fa-sign-out"></i><br/>Logga ut</div>');
-      
         
+        // $('#header').append("<label>Användarnamn</label><input id='username' type='text'/>");
+        // console.log("#username");
+        // $('#header').append("<label>Lösenord</label><input id='password' type='password'/>");
+        // $('#header').append('<div class="logOut" onclick="signOut()"><i class="fa fa-sign-out"></i><br/>Logga ut</div>');
+        // $('#header').append('<div class="logIn" onclick="logIn()"><i class="fa fa-sign-out"></i><br/>Logga In</div>');
+        // $('#header').append('<div class="logIn"><i class="fa fa-sign-out"></i><br/>Logga In</div>');
+        
+
+        $(".menyList").append("<li><a href='index.html'>Start</a></li>");
         for(var i = 0; i < categoryList.length; i++){
             var mainCategoryName = "<li class='menuItems' onclick='showUnderCategory(" + [i] + "); showProductList(" + [i] + ")'><a href='#'>" + categoryList[i].mainCategory + "</a></li>";
             $(".menyList").append(mainCategoryName);
@@ -148,7 +230,7 @@ fetch("kunder.json")
         totalPrice += freightPrice;
 
         $(".shoppingCartAllProducts").append("<p>" + " Totalpris (varav frakt: 55kr) " + totalPrice  + " kr " + "</p>");
-        $(".shoppingCartAllProducts").append("<button class='goToCheckOut'>Gå till Kassan</button>");
+        $(".shoppingCartAllProducts").append("<button class='goToCheckOut' onclick='goToCheckOut()'>Gå till Kassan</button>");
         
         console.log(totalPrice);       
     }
@@ -160,4 +242,17 @@ fetch("kunder.json")
         
         showShoppingCart();
     } 
+
+
+//Gå till kassan/skicka order
+goToCheckOut = function (){
+    console.log("Inloggad- Gå till kassan");
+   
+    if(sessionStorage.userId != null){
+
+    }
+
+}
+
+
 });
