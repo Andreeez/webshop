@@ -196,6 +196,13 @@ $(".register").click(function(){
         var product = productList[i-1]
 
         shoppingCart.push(product);
+        var json_str = JSON.stringify(shoppingCart);
+        localStorage.shoppingCart = json_str;
+        localStorage.setItem("pushProduct", JSON.stringify(shoppingCart));
+        loopCart = JSON.parse(localStorage.getItem("pushProduct"));
+
+
+       
         
 
         $(".counter").html(shoppingCart.length);
@@ -210,11 +217,14 @@ $(".register").click(function(){
 
         $(".shoppingCartAllProducts").append("<div class='shoppingCartProduct'> "+ " </div>")
        
-        var json_str = JSON.stringify(shoppingCart);
-        localStorage.shoppingCart = json_str;
+        // var json_str = JSON.stringify(shoppingCart);
+        // localStorage.shoppingCart = json_str;
 
-        var loopCart = JSON.parse(localStorage.shoppingCart);
+        // var loopCart = JSON.parse(localStorage.shoppingCart);
 
+        
+
+        loopCart = JSON.parse(localStorage.getItem("pushProduct"));
         for (var i = 0; i < loopCart.length; i++){
             $(".shoppingCartProduct").append("<div class='shoppingCart'>" + loopCart[i].prodName + " " +  loopCart[i].prodPrice + " kr" + "<a href='#' onClick='delCartItem(" + i + ")'>Ta bort</a>" + "</div>");
 
@@ -228,7 +238,7 @@ $(".register").click(function(){
         totalPrice += freightPrice;
 
         $(".shoppingCartAllProducts").append("<p>" + " Totalpris (varav frakt: 55kr) " + totalPrice  + " kr " + "</p>");
-        $(".shoppingCartAllProducts").append("<button class='goToCheckOut' onclick='goToCheckOut(" + i + ")'>Gå till Kassan</button>");
+        $(".shoppingCartAllProducts").append("<button class='goToCheckOut' onclick='goToCheckOut(" + loopCart[i] + ")'>Gå till Kassan</button>");
              
     }
 
@@ -282,7 +292,7 @@ registerMember = function(){
 //Lägga produkter i checkout
 addOrderToCheckOut = function(i){
     console.log("hittar inte loopcart");
-    console.log(shoppingCart);
+    console.log(loopCart);
     $(".content").html("");
     $(".content").append("<p>Tack för din order</p>");
 //Här ska jag puscha in varukoregen i localstorage för att skriva ut den på admin sidan....
@@ -307,7 +317,7 @@ addOrderToCheckOut = function(i){
     saveOrder.push(sendProduct);
     console.log(saveOrder);
     var json_str = JSON.stringify(saveOrder);
-    localStorage.shoppingCart = json_str;
+    localStorage.saveOrder = json_str;
     localStorage.setItem("order", JSON.stringify(saveOrder));
     console.log(saveOrder);
 
@@ -401,17 +411,17 @@ showOrder = function(i){
 
     console.log(saveOrder);
     console.log(shoppingCart);
-    shoppingCart = JSON.parse(localStorage.getItem("order"));
-    // saveOrder = JSON.parse(localStorage.getItem("order"));
+    // loopCart = JSON.parse(localStorage.getItem("order"));
+    saveOrder = JSON.parse(localStorage.getItem("order"));
     
-    for (var i = 0; i < shoppingCart.length; i++){
-        $(".content").append("<div class='showSavedOrder'>" + shoppingCart[i].prodName + shoppingCart[i].length +  "</div>");
-        console.log(shoppingCart);
-    }
-        // for (var i = 0; i < saveOrder.length; i++){
-        //     $(".content").append("<div class='showSavedOrder'>" + saveOrder[i].prodName + saveOrder[i].length +  "</div>");
-        //     console.log(saveOrder);
-        // }
+    // for (var i = 0; i < loopCart.length; i++){
+    //     $(".content").append("<div class='showSavedOrder'>" + loopCart[i].prodName + loopCart[i].length +  "</div>");
+    //     console.log(loopCart);
+    // }
+        for (var i = 0; i < saveOrder.length; i++){
+            $(".content").append("<div class='showSavedOrder'>" + saveOrder[i] + saveOrder[i].length +  "</div>");
+            console.log(saveOrder);
+        }
 
         // $(".content").append(showSavedOrder);
 
