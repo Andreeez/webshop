@@ -12,7 +12,6 @@ fetch("huvudkategorier.json")
     .then(function(huvudkategori){
         categoryList = huvudkategori;
         showMainCategory();
-        console.log(showMainCategory);
     });
 //Fetch Underkatergori   
 fetch("underkategorier.json")
@@ -41,13 +40,6 @@ fetch("kunder.json")
     });
 
 //Kolla om kund är inloggad
-
-
-$(".testKnapp").click(function(){
-console.log("hej");
-});
-
-
 
 $(".loggaUtKnapp").hide();
 if(sessionStorage.userId !=null){
@@ -153,7 +145,7 @@ $(".register").click(function(){
             var underCatName = "<li onclick='showProductList("+ underCategoryList[index].id +")'><a href='#'>" + underCategoryList[index].subCategory + "</a></li>";
             if(underCategoryList[index].mainCategory == i+1){
                 $(".productMenyList").append(underCatName);
-                console.log(underCatName);
+                
             }
         }
     }
@@ -209,7 +201,7 @@ $(".register").click(function(){
 
     }
 
-// Visa produkter som är sparade i localstorage 
+//Visa produkter som är sparade i localstorage 
     showShoppingCart = function(){
         
         $(".content").html("<h1>Kundvagn</h1>");
@@ -221,13 +213,10 @@ $(".register").click(function(){
         localStorage.shoppingCart = json_str;
 
         var loopCart = JSON.parse(localStorage.shoppingCart);
-        console.log("Innan for loop");
-        console.log(loopCart[i]);
+
         for (var i = 0; i < loopCart.length; i++){
             $(".shoppingCartProduct").append("<div class='shoppingCart'>" + loopCart[i].prodName + " " +  loopCart[i].prodPrice + " kr" + "<a href='#' onClick='delCartItem(" + i + ")'>Ta bort</a>" + "</div>");
-            console.log("I for loop");
-            console.log(loopCart[i].prodName);
-            console.log(loopCart[i].id);
+
         }
         var totalPrice = 0;
         var freightPrice = 55;
@@ -239,11 +228,10 @@ $(".register").click(function(){
 
         $(".shoppingCartAllProducts").append("<p>" + " Totalpris (varav frakt: 55kr) " + totalPrice  + " kr " + "</p>");
         $(".shoppingCartAllProducts").append("<button class='goToCheckOut' onclick='goToCheckOut()'>Gå till Kassan</button>");
-        
-        console.log(totalPrice);       
+             
     }
 
-// Ta bort produkter i varukorgen
+//Ta bort produkter i varukorgen
     delCartItem = function(i){
         shoppingCart.splice(i,1);
         $(".counter").html(shoppingCart.length);
@@ -292,8 +280,15 @@ registerMember = function(){
 
 //Lägga produkter i checkout
 addOrderToCheckOut = function(){
+
+    // if(loopCart[i].id == i){
+    //     $(".content").append("<p>Tack för din order</p>");
+    // } else {
+    //     $(".content").append("<p>Du måste lägga produkt i varukorgen</p>");
+    // }
     $(".content").html("");
     $(".content").append("<p>Tack för din order</p>");
+  
 }
 
 sendRegister = function(){
