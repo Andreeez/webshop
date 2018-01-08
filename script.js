@@ -196,14 +196,15 @@ $(".register").click(function(){
         var product = productList[i-1]
 
         shoppingCart.push(product);
-        var json_str = JSON.stringify(shoppingCart);
-        localStorage.shoppingCart = json_str;
         localStorage.setItem("pushProduct", JSON.stringify(shoppingCart));
-        loopCart = JSON.parse(localStorage.getItem("pushProduct"));
-
-
-       
+        shoppingCart = JSON.parse(localStorage.getItem("pushProduct"));
         
+
+// var json_str = JSON.stringify(shoppingCart);
+        // localStorage.shoppingCart = json_str;
+
+
+
 
         $(".counter").html(shoppingCart.length);
 
@@ -222,29 +223,35 @@ $(".register").click(function(){
 
         // var loopCart = JSON.parse(localStorage.shoppingCart);
 
-        
+        shoppingCart = JSON.parse(localStorage.getItem("pushProduct"));
+        // loopCart = JSON.parse(localStorage.getItem("pushProduct"));
+        // $(".shoppingCartProduct").append("<div class='shoppingCart'>" + shoppingCart[i].prodName + " " +  shoppingCart[i].prodPrice + " kr" + "<a href='#' onClick='delCartItem(" + i + ")'>Ta bort</a>" + "</div>");
+        // for (var i = 0; i < shoppingCart.length; i++){
 
-        loopCart = JSON.parse(localStorage.getItem("pushProduct"));
-        for (var i = 0; i < loopCart.length; i++){
-            $(".shoppingCartProduct").append("<div class='shoppingCart'>" + loopCart[i].prodName + " " +  loopCart[i].prodPrice + " kr" + "<a href='#' onClick='delCartItem(" + i + ")'>Ta bort</a>" + "</div>");
+        // }
+        for (var i = 0; i < shoppingCart.length; i++){
+            $(".shoppingCartProduct").append("<div class='shoppingCart'>" + shoppingCart[i].prodName + " " +  shoppingCart[i].prodPrice + " kr" + "<a href='#' onClick='delCartItem(" + i + ")'>Ta bort</a>" + "</div>");
 
         }
+       
         var totalPrice = 0;
         var freightPrice = 55;
 
-        for(var i = 0; i < loopCart.length; i++ ){
-            totalPrice += loopCart[i].prodPrice;
+        for(var i = 0; i < shoppingCart.length; i++ ){
+            totalPrice += shoppingCart[i].prodPrice;
         }
         totalPrice += freightPrice;
 
         $(".shoppingCartAllProducts").append("<p>" + " Totalpris (varav frakt: 55kr) " + totalPrice  + " kr " + "</p>");
-        $(".shoppingCartAllProducts").append("<button class='goToCheckOut' onclick='goToCheckOut(" + loopCart[i] + ")'>Gå till Kassan</button>");
+        $(".shoppingCartAllProducts").append("<button class='goToCheckOut' onclick='goToCheckOut(" + shoppingCart[i] + ")'>Gå till Kassan</button>");
              
     }
 
 //Ta bort produkter i varukorgen
     delCartItem = function(i){
         shoppingCart.splice(i,1);
+        // shoppingCart.splice(i,1);
+        // $(".counter").html(shoppingCart.length);
         $(".counter").html(shoppingCart.length);
         
         showShoppingCart();
@@ -255,17 +262,43 @@ $(".register").click(function(){
 goToCheckOut = function (i){
     console.log("Inloggad- Gå till kassan");
    
-    if(sessionStorage.userId != null){
-        console.log("Detta hittar den inte");
-        addOrderToCheckOut(i);
-  
-    } else {
-        // $(".content").html("Skapa Inlogg");
-        registerMember();
-        // Ett steg som kan läggas till senare, om ejinloggad välj att kunna logga in och ett formulär öppnas upp på nytt
-        // var logInButton = "<button class='logInButton'>Logga in</button>" 
+    console.log(shoppingCart);
+    var sendProduct = shoppingCart;
+    console.log("Detta finns med??!!!!!");
+    saveOrder.push(sendProduct);
+    console.log("Detta finns med??");
+    console.log(saveOrder);
+    console.log("detta är efter push");
+    localStorage.setItem("order",JSON.stringify(saveOrder));
+    saveOrder = JSON.parse(localStorage.getItem("order"));
+    console.log("hej");
+    console.log(saveOrder);
 
-    }
+
+    // if(sessionStorage.userId != null){
+        
+
+    //     // addOrderToCheckOut(shoppingCart);
+    //     // console.log(shoppingCart);
+    //     // console.log("skriver ut produkter");
+  
+    // } else {
+    //     // $(".content").html("Skapa Inlogg");
+    //     registerMember();
+    //     // Ett steg som kan läggas till senare, om ejinloggad välj att kunna logga in och ett formulär öppnas upp på nytt
+    //     // var logInButton = "<button class='logInButton'>Logga in</button>" 
+
+    // }
+
+    // var sendProduct = shoppingCart[i];
+    // saveOrder.push(sendProduct);
+    // console.log(saveOrder);
+    // console.log("detta är efter push");
+    // localStorage.setItem("order",JSON.stringify(saveOrder));
+    // saveOrder = JSON.parse(localStorage.getItem("order"));
+    // console.log("hej");
+    // console.log(saveOrder);
+
 
 }
 
@@ -290,47 +323,55 @@ registerMember = function(){
 }
 
 //Lägga produkter i checkout
-addOrderToCheckOut = function(i){
-    console.log("hittar inte loopcart");
-    console.log(loopCart);
-    $(".content").html("");
-    $(".content").append("<p>Tack för din order</p>");
-//Här ska jag puscha in varukoregen i localstorage för att skriva ut den på admin sidan....
-    // var sendProduct = loopCart[i];
-    // console.log(loopCart);
-    // var json_str = JSON.stringify(saveOrder);
-    // localStorage.shoppingCart = json_str;
-    // localStorage.setItem("order", JSON.stringify(saveOrder));
+// addOrderToCheckOut = function(i){
+//     console.log("hittar inte loopcart");
+//     //console.log(shoppingCart);
+//     $(".content").html("");
+//     $(".content").append("<p>Tack för din order</p>");
+// //Här ska jag puscha in varukoregen i localstorage för att skriva ut den på admin sidan....
+//     // var sendProduct = loopCart[i];
+//     // console.log(loopCart);
+//     // var json_str = JSON.stringify(saveOrder);
+//     // localStorage.shoppingCart = json_str;
+//     // localStorage.setItem("order", JSON.stringify(saveOrder));
 
-    // saveOrder.push(sendProduct);
+//     // saveOrder.push(sendProduct);
 
-    // var sendProduct = shoppingCart[i]
-    // saveOrder.push(sendProduct);
-    // console.log(saveOrder);
+//     // var sendProduct = shoppingCart[i]
+//     // saveOrder.push(sendProduct);
+//     // console.log(saveOrder);
 
-    // var json_str = JSON.stringify(saveOrder)
-    // localStorage.shoppingCart = json_str;
-    // localStorage.setItem("order", JSON.stringify(saveOrder));
+//     // var json_str = JSON.stringify(saveOrder)
+//     // localStorage.shoppingCart = json_str;
+//     // localStorage.setItem("order", JSON.stringify(saveOrder));
    
 
-    var sendProduct = loopCart[i];
-    saveOrder.push(sendProduct);
-    console.log(saveOrder);
-    var json_str = JSON.stringify(saveOrder);
-    localStorage.saveOrder = json_str;
-    localStorage.setItem("order", JSON.stringify(saveOrder));
-    console.log(saveOrder);
+//     // var sendProduct = loopCart[i];
+//     // saveOrder.push(sendProduct);
+//     // console.log(saveOrder);
+//     // var json_str = JSON.stringify(saveOrder);
+//     // localStorage.saveOrder = json_str;
+//     // localStorage.setItem("order", JSON.stringify(saveOrder));
+//     // console.log(saveOrder);
 
-    
+//     // var 
+//     // var sendProduct = shoppingCart[i];
+//     // saveOrder.push(sendProduct);
+//     // var json_str = JSON.stringify(saveOrder);
+//     // localStorage.saveOrder = json_str;
+//     // localStorage.setItem("order", JSON.stringify(saveOrder));
+
+//     // var sendProduct = shoppingCart[i];
+//     // saveOrder.push(sendProduct);
+//     // console.log(saveOrder);
+//     // console.log("detta är efter push");
+//     // localStorage.setItem("order",JSON.stringify(saveOrder));
+//     // saveOrder = JSON.parse(localStorage.getItem("order"));
+//     // console.log("hej");
+//     // console.log(saveOrder);
 
 
-
-
-
-
-    
-
-}
+// }
 
 sendRegister = function(){
     console.log("Skicka till register")
@@ -358,9 +399,6 @@ adminContent += '</form>';
 adminContent += '</div>';
 
 $("#headerAdmin").append(adminContent);
-
-
-
 
 $(".adminLogOutButton").hide();
 if(sessionStorage.admin != null ){
@@ -408,9 +446,11 @@ listaKunder = function(){
 showOrder = function(i){
     $(".content").html("");
     $(".content").append("<p>Här ska sparade order visas</p>");
-
+    console.log("detta skrivs1111");
     console.log(saveOrder);
+    console.log("detta skrivs323213211");
     console.log(shoppingCart);
+    console.log("detta skrivs");
     // loopCart = JSON.parse(localStorage.getItem("order"));
     saveOrder = JSON.parse(localStorage.getItem("order"));
     
@@ -419,12 +459,12 @@ showOrder = function(i){
     //     console.log(loopCart);
     // }
         for (var i = 0; i < saveOrder.length; i++){
-            $(".content").append("<div class='showSavedOrder'>" + saveOrder[i] + saveOrder[i].length +  "</div>");
-            console.log(saveOrder);
+            $(".content").append("<div class='showSavedOrder'>" + saveOrder[i].prodName + saveOrder[i].length +  "</div>");
+            console.log(saveOrder[i]);
+            console.log("detta skrivs2");
         }
 
         // $(".content").append(showSavedOrder);
-
 
 }
 }

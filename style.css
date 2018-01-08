@@ -3,11 +3,13 @@ body {
    height: 100vh;
    width: 100vw;
    font-family: 'Quattrocento Sans', sans-serif;
+   text-align: center;
 }
 
 #container {
     width: 100%;
     height: 100vh;
+    text-align: center;
    
 }
 
