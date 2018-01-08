@@ -243,7 +243,7 @@ $(".register").click(function(){
         totalPrice += freightPrice;
 
         $(".shoppingCartAllProducts").append("<p>" + " Totalpris (varav frakt: 55kr) " + totalPrice  + " kr " + "</p>");
-        $(".shoppingCartAllProducts").append("<button class='goToCheckOut' onclick='goToCheckOut(" + shoppingCart[i] + ")'>Gå till Kassan</button>");
+        $(".shoppingCartAllProducts").append("<button class='goToCheckOut' onclick='goToCheckOut(" + shoppingCart[i] + ")'>Skicka beställning</button>");
              
     }
 
@@ -460,6 +460,8 @@ showOrder = function(i){
     // }
         for (var i = 0; i < saveOrder.length; i++){
             $(".content").append("<div class='showSavedOrder'>" + saveOrder[i].prodName + saveOrder[i].length +  "</div>");
+
+            
             console.log(saveOrder[i]);
             console.log("detta skrivs2");
         }
