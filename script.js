@@ -199,13 +199,6 @@ $(".register").click(function(){
         localStorage.setItem("pushProduct", JSON.stringify(shoppingCart));
         shoppingCart = JSON.parse(localStorage.getItem("pushProduct"));
         
-
-// var json_str = JSON.stringify(shoppingCart);
-        // localStorage.shoppingCart = json_str;
-
-
-
-
         $(".counter").html(shoppingCart.length);
 
     }
@@ -217,18 +210,9 @@ $(".register").click(function(){
         $(".content").append("<div class='shoppingCartAllProducts'>"+"</div>")
 
         $(".shoppingCartAllProducts").append("<div class='shoppingCartProduct'> "+ " </div>")
-       
-        // var json_str = JSON.stringify(shoppingCart);
-        // localStorage.shoppingCart = json_str;
-
-        // var loopCart = JSON.parse(localStorage.shoppingCart);
-
+      
         shoppingCart = JSON.parse(localStorage.getItem("pushProduct"));
-        // loopCart = JSON.parse(localStorage.getItem("pushProduct"));
-        // $(".shoppingCartProduct").append("<div class='shoppingCart'>" + shoppingCart[i].prodName + " " +  shoppingCart[i].prodPrice + " kr" + "<a href='#' onClick='delCartItem(" + i + ")'>Ta bort</a>" + "</div>");
-        // for (var i = 0; i < shoppingCart.length; i++){
-
-        // }
+ 
         for (var i = 0; i < shoppingCart.length; i++){
             $(".shoppingCartProduct").append("<div class='shoppingCart'>" + shoppingCart[i].prodName + " " +  shoppingCart[i].prodPrice + " kr" + "<a href='#' onClick='delCartItem(" + i + ")'>Ta bort</a>" + "</div>");
 
@@ -250,133 +234,56 @@ $(".register").click(function(){
 //Ta bort produkter i varukorgen
     delCartItem = function(i){
         shoppingCart.splice(i,1);
-        // shoppingCart.splice(i,1);
-        // $(".counter").html(shoppingCart.length);
         $(".counter").html(shoppingCart.length);
-        
         showShoppingCart();
     } 
 
 
 //Gå till kassan/skicka order
-goToCheckOut = function (i){
-    console.log("Inloggad- Gå till kassan");
-   
-    console.log(shoppingCart);
-    var sendProduct = shoppingCart;
-    console.log("Detta finns med??!!!!!");
-    saveOrder.push(sendProduct);
-    console.log("Detta finns med??");
-    console.log(saveOrder);
-    console.log("detta är efter push");
-    localStorage.setItem("order",JSON.stringify(saveOrder));
-    saveOrder = JSON.parse(localStorage.getItem("order"));
-    console.log("hej");
-    console.log(saveOrder);
+    goToCheckOut = function (i){
+        console.log("Inloggad- Gå till kassan"); 
+        console.log(shoppingCart);
+        var sendProduct = shoppingCart;
+        console.log("Detta finns med??!!!!!");
+        saveOrder.push(sendProduct);
+        console.log("Detta finns med??");
+        console.log(saveOrder);
+        console.log("detta är efter push");
+        localStorage.setItem("order",JSON.stringify(saveOrder));
+        saveOrder = JSON.parse(localStorage.getItem("order"));
+        console.log("hej");
+        console.log(saveOrder);
+    }      
 
+////Bli Medlem formulär
+    registerMember = function(){
+        $(".content").html("");
+        console.log("Bli medlem");
+        $(".content").append("<p>Bli medlem</p>");
+        var content;
+        content = '<div class="registerForm">';
+        content += '<form>';
+        content += '<label>Namn</label>'
+        content += '<input class="registerName" text="text"></input>';
+        content += '<label>Email</label>';
+        content += '<input class="registerEmail text="text></input>';
+        content += '<label>Lösenord</label>';
+        content += '<input class="registerPassword" text="password"></input>';
+        content += '<input class="newsLetterYes" type="checkbox">Nyhetsbrev, JA</input>';
+        content += '<button class="registerButton" onclick="sendRegister()">Regristrera</button>';
+        content += '</div>';
+        $(".content").append(content);
 
-    // if(sessionStorage.userId != null){
-        
+    }
+//Funktion för att skicka nya användaruppgifter in i LocalStorage
+    sendRegister = function(){
 
-    //     // addOrderToCheckOut(shoppingCart);
-    //     // console.log(shoppingCart);
-    //     // console.log("skriver ut produkter");
-  
-    // } else {
-    //     // $(".content").html("Skapa Inlogg");
-    //     registerMember();
-    //     // Ett steg som kan läggas till senare, om ejinloggad välj att kunna logga in och ett formulär öppnas upp på nytt
-    //     // var logInButton = "<button class='logInButton'>Logga in</button>" 
+        var newUser = [];
+        newUser.push({id: 4, name: $(".registerName").val(), email: $(".registerEmail").val(), password: $(".registerPassword").val(), nyhetsbrev: $(".newsLetterYes").val()});
+        localStorage.setItem("pushNewMember", JSON.stringify(newUser));
+        newUser = JSON.parse(localStorage.getItem("pushNewMember"));
+    }
 
-    // }
-
-    // var sendProduct = shoppingCart[i];
-    // saveOrder.push(sendProduct);
-    // console.log(saveOrder);
-    // console.log("detta är efter push");
-    // localStorage.setItem("order",JSON.stringify(saveOrder));
-    // saveOrder = JSON.parse(localStorage.getItem("order"));
-    // console.log("hej");
-    // console.log(saveOrder);
-
-
-}
-
-//Bli Medlem
-registerMember = function(){
-    $(".content").html("");
-    console.log("Bli medlem");
-    $(".content").append("<p>Bli medlem</p>");
-    var content;
-    content = '<div class="registerForm">';
-    content += '<form>';
-    content += '<label>Namn</label>'
-    content += '<input class="registerName" text="text"></input>';
-    content += '<label>Email</label>';
-    content += '<input class="registerEmail text="text></input>';
-    content += '<label>Lösenord</label>';
-    content += '<input class="registerPassword" text="password"></input>';
-    content += '<button class="registerButton" onclick="sendRegister()">Regristrera</button>';
-    content += '</div>';
-    $(".content").append(content);
-
-}
-
-//Lägga produkter i checkout
-// addOrderToCheckOut = function(i){
-//     console.log("hittar inte loopcart");
-//     //console.log(shoppingCart);
-//     $(".content").html("");
-//     $(".content").append("<p>Tack för din order</p>");
-// //Här ska jag puscha in varukoregen i localstorage för att skriva ut den på admin sidan....
-//     // var sendProduct = loopCart[i];
-//     // console.log(loopCart);
-//     // var json_str = JSON.stringify(saveOrder);
-//     // localStorage.shoppingCart = json_str;
-//     // localStorage.setItem("order", JSON.stringify(saveOrder));
-
-//     // saveOrder.push(sendProduct);
-
-//     // var sendProduct = shoppingCart[i]
-//     // saveOrder.push(sendProduct);
-//     // console.log(saveOrder);
-
-//     // var json_str = JSON.stringify(saveOrder)
-//     // localStorage.shoppingCart = json_str;
-//     // localStorage.setItem("order", JSON.stringify(saveOrder));
-   
-
-//     // var sendProduct = loopCart[i];
-//     // saveOrder.push(sendProduct);
-//     // console.log(saveOrder);
-//     // var json_str = JSON.stringify(saveOrder);
-//     // localStorage.saveOrder = json_str;
-//     // localStorage.setItem("order", JSON.stringify(saveOrder));
-//     // console.log(saveOrder);
-
-//     // var 
-//     // var sendProduct = shoppingCart[i];
-//     // saveOrder.push(sendProduct);
-//     // var json_str = JSON.stringify(saveOrder);
-//     // localStorage.saveOrder = json_str;
-//     // localStorage.setItem("order", JSON.stringify(saveOrder));
-
-//     // var sendProduct = shoppingCart[i];
-//     // saveOrder.push(sendProduct);
-//     // console.log(saveOrder);
-//     // console.log("detta är efter push");
-//     // localStorage.setItem("order",JSON.stringify(saveOrder));
-//     // saveOrder = JSON.parse(localStorage.getItem("order"));
-//     // console.log("hej");
-//     // console.log(saveOrder);
-
-
-// }
-
-sendRegister = function(){
-    console.log("Skicka till register")
-    alert("Skicka till register");
-}
 
 ///
 /// ****** Kod för admin sida  ***********
@@ -424,58 +331,68 @@ if(sessionStorage.admin != null ){
     });
   
 }
+///Funktion, när admin är inloggad körs nedan
+    function adminLogedIn(){
 
-function adminLogedIn(){
-console.log("hejhej");
-    $(".adminLogOutButton").show();
+        $(".adminLogOutButton").show();
 
-var adminLista
-adminLista = '<li><a href="admin.html">Start</a>';
-adminLista += '<li onclick="listaKunder()">Kundlista</li>';
-adminLista += '<li onclick="showOrder()">Orderlista</li>';
-adminLista += '<li>Epostlista</li>';
+        var adminLista
+        adminLista = '<li><a href="admin.html">Start</a>';
+        adminLista += '<li onclick="listaKunder()">Kundlista</li>';
+        adminLista += '<li onclick="showOrder()">Orderlista</li>';
+        adminLista += '<li onclick="showCustomerNewsLetter()">Epostlista</li>';
 
-$("#adminMenyList").append(adminLista);
-listaKunder = function(){
-    $(".content").html("");
-    for(var i = 0; i < kundLista.length; i++) {
-        $(".content").append("<li>" + "Användare" + kundLista[i].id + "</br>" + "email: " + kundLista[i].email + "</br>"  + "lösenord: " + kundLista[i].password + "</br>" + "</br>" + "</li>")
-    }
-}
+        $("#adminMenyList").append(adminLista);
 
-showOrder = function(i){
-    $(".content").html("");
-    $(".content").append("<p>Här ska sparade order visas</p>");
-    console.log("detta skrivs1111");
-    console.log(saveOrder);
-    console.log("detta skrivs323213211");
-    console.log(shoppingCart);
-    console.log("detta skrivs");
-    // loopCart = JSON.parse(localStorage.getItem("order"));
-    saveOrder = JSON.parse(localStorage.getItem("order"));
+        listaKunder = function(){
+            $(".content").html("");
     
-    // for (var i = 0; i < loopCart.length; i++){
-    //     $(".content").append("<div class='showSavedOrder'>" + loopCart[i].prodName + loopCart[i].length +  "</div>");
-    //     console.log(loopCart);
-    // }
-        for (var i = 0; i < saveOrder.length; i++){
-            $(".content").append("<div class='showSavedOrder'>" + saveOrder[i].prodName + saveOrder[i].length +  "</div>");
-
-            
-            console.log(saveOrder[i]);
-            console.log("detta skrivs2");
+            newUser= JSON.parse(localStorage.getItem("pushNewMember"));
+            for(var i = 0; i < kundLista.length; i++) {
+                $(".content").append("<li>" + "Användare" + kundLista[i].id + "</br>" + "email: " + kundLista[i].email + "</br>"  + "lösenord: " + kundLista[i].password + "</br>" + "</br>" + "</li>");
+            }
+        
+            for(var i = 0; i < newUser.length; i++){
+                $(".content").append("<li>" + "Användare" + newUser[i].name + "</br>" + "email: " + newUser[i].email + "</br>" + "lösenord: " + newUser[i].password + "</br>" + "</br>" + "</br>" + "</li>");
+      
+            }
         }
 
-        // $(".content").append(showSavedOrder);
+// showCustomerNewsLetter = function(){
+    
+//     newUser= JSON.parse(localStorage.getItem("pushNewMember"));
+//     $(".content").append("<p>Nedan kunder vill ha nyhetsbrev");
+//     if($(".newsLetterYes").is(':checked')){
+//         for(var i = 0; i < newUser.length; i++){
+//             $(".content").append("<li>" + "Användare" + newUser[i].name + "</br>" + "email: " + newUser[i].email + "</br>" +"</li>");
+//             console.log(newUser);
+        
+//             }
+//     }
+// }
 
-}
-}
+//Här körs funktion för att visa order på Admin-sida
+    showOrder = function(i){
+        $(".content").html("");
+        $(".content").append("<p>Här ska sparade order visas</p>");
 
-$(".adminLogOutButton").click(function(){
-    sessionStorage.clear()
-    location.reload();
-    console.log("Du loggade ut");
-});
+        saveOrder = JSON.parse(localStorage.getItem("order"));
+        
+        for (var i = 0; i < saveOrder.length; i++){
+            $(".content").append("<div class='showSavedOrder'>" + "<li>" + saveOrder[i][i].prodName + "</li>" + saveOrder[i].length +  "</div>");
+
+        }
+
+    }   
+} // Här stängs admininloggningsfunktion
+
+
+/// FUnktion för admin utloggning
+    $(".adminLogOutButton").click(function(){
+        sessionStorage.clear()
+        location.reload();
+        console.log("Du loggade ut");
+    });
 
 });
 
