@@ -12,5 +12,10 @@
         "email": "test",
         "password": "test"
 
+    },{
+        "id": 4,
+        "email": "pelle",
+        "password": "pelle"
+
     }
 ]
