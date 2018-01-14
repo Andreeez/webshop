@@ -1,9 +1,10 @@
 body {
    margin: 0px 0px 0px 0px;
    height: 100vh;
-   width: 100vw;
+   
    font-family: 'Quattrocento Sans', sans-serif;  
    text-align: center;
+   background-color: red;
 
 }
 
@@ -12,6 +13,7 @@ body {
     flex-flow: row wrap;
     justify-content: center;
     width: 100vw;
+    background-color: #38444e;
 
 }
 
@@ -21,11 +23,20 @@ body {
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
+    background-color: white;
 }
 #headerForCartandLogin {
     width: 1200px;
     display: flex;
     justify-content: flex-end;
+    background-color: white;
+}
+
+#headerDivForLoginIn{
+    width: 1200px;
+    display: flex;
+    justify-content: flex-end;
+   
 }
 
 
@@ -101,8 +112,35 @@ body {
     width: 1200px;
     display: flex;
     height: 2em;
-    justify-content: center;
+    justify-content: flex-end;
 }
+
+.logInButton2{
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    width: 10em;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin: 2px 2px;
+    cursor: pointer;
+}
+
+.register{
+    background-color: rgb(175, 76, 106);
+    border: none;
+    color: white;
+    width: 10em;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
 
 .content {
     width: 1200px;
@@ -122,6 +160,7 @@ body {
     flex-flow: column;
     align-content: center;
     justify-content: center;
+    background-color: white;
     border: 1px solid black;
     height: 300px;
     width: 250px;
@@ -146,28 +185,43 @@ body {
 .cardProductBox{
     border: 1px solid black;
     padding-top: 2em;
+    padding-bottom: 2em;
     display: flex;
     flex-flow: column;
     height: 500px;
     width: 500px;
+    background-color: white;
+}
+
+.cartButton{
+    background-color: rgb(0, 85, 21);
+    border: none;
+    color: white;
+    text-align: center;
+    font-size: 16px;
+    padding: 20px;
+    cursor: pointer;
+    width: 20em;
+
 }
 
 .shoppingCartAllProducts{
     display: flex;
     flex-flow: column;
-    height: 400px;
+    height: 100%;
     border: 1px solid black;
     width: 700px;
 }
 
 .cartProductBox{
     display: flex;
-    flex-flow: row;
+    flex-flow: row wrap;
+    
 }
 
 .cartProductImage{
-    height: 30px;
-    width: 30px;
+    height: 80px;
+    width: 80px;
 }
 
 .delCartItem{
@@ -181,11 +235,118 @@ body {
     color: black;
 }
 
+.goToCheckOut {
+    display: inline-block;
+    border-radius: 4px;
+    background-color: #f4511e;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 16px;
+    padding: 20px;
+    width: 200px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+  }
+  
+  .goToCheckOut span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+  
+  .goToCheckOut span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
+  
+  .goToCheckOut:hover span {
+    padding-right: 25px;
+  }
+  
+  .goToCheckOut:hover span:after {
+    opacity: 1;
+    right: 0;
+  }
+
+  .registerForm{
+      
+      width: 100%;
+      display: flex;
+      
+      flex-flow: column;
+      background-color: white;
+  }
+
+  .registerForm form{
+      display: flex;
+      flex-flow: column;
+      margin: auto;
+      padding-bottom: 2em;
+      padding-top: 2em;
+  }
+
+  .registerButton{
+    background-color: rgb(175, 76, 106);
+    border: none;
+    color: white;
+    width: 10em;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    padding: 16px 32px;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+
+  }
+
 #footer{
     display: flex;
     height: 15em;
     width: 100%;
     background-color: rgb(73, 72, 72);
+    color: white;
+}
+
+#aboutUs{
+    display: flex;
+    flex-flow: column;
+    align-content: center;
+    align-items: center;
+    list-style: none;
+    width: 30%;
+    margin: auto;
+    /* background-color: red; */
+}
+
+#moneyAlt{
+    display: flex;
+    flex-flow: row wrap;
+    align-content: space-around;
+    
+}
+#contactUs{
+    display: flex;
+    flex-flow: column;
+    margin: auto;
+    width: 40%;
+    list-style: none;
+    /* background-color: aqua;  */
+}
+#socialMediaUs{
+    display: flex;
+    flex-flow: row wrap;
+    margin: auto;
+    list-style: none;
+    width: 30%;
+        /* background-color: yellow; */
 }
 
  /*.menyList {
@@ -283,3 +444,63 @@ body {
     padding-bottom: 10px;
 }
 
+@media all and (max-width: 560px) {
+    #container{
+       width: 100%;
+    }
+
+    
+
+    #header{
+        max-width: 100%;
+    }
+
+    #headerDivForLoginIn{
+        max-width: 100%;
+    }
+
+    .meny{
+        max-width: 100%;
+       
+        
+    }
+    .menyList{
+       
+        justify-content: center;
+        flex-flow: row wrap;
+        height: 2em;
+    }
+    .productMeny{
+        max-width: 100%
+        
+
+        
+    }
+    .productMenyList{
+        height: 2em;
+        flex-flow: row wrap;
+    }
+
+    .content{
+        max-width: 100%;
+    }
+    .contentPicture{
+        max-width: 100%;
+    }
+    #footer{
+        max-width: 100%;
+    }
+
+    #aboutUs{
+        width: 100%;
+
+    }
+
+    #contactUs{
+        width: 100%;
+    }
+
+    #socialMediaUs{
+        width: 100%;
+    }
+}
