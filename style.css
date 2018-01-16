@@ -36,6 +36,7 @@ body {
     width: 1200px;
     display: flex;
     justify-content: flex-end;
+    background-color: white;
    
 }
 
@@ -52,7 +53,7 @@ body {
  .meny {
     height: 2em;
     /* width: 1200px; */
-    background-color: rgb(38, 56, 31);
+    background-color: rgb(73, 72, 72);
     display: flex;
     flex-flow: row nowrap;    
     
@@ -69,7 +70,7 @@ body {
 
 .productMeny{
     height: 2em;
-    background-color: rgb(38, 56, 31);
+    background-color: rgb(73, 72, 72);
     display: flex;
     flex-flow: row nowrap;
    
@@ -208,10 +209,13 @@ body {
 .shoppingCartAllProducts{
     display: flex;
     flex-flow: column;
+    align-items: center;
     height: 100%;
     border: 1px solid black;
+    background-color: white;
     width: 700px;
 }
+
 
 .cartProductBox{
     display: flex;
@@ -305,6 +309,34 @@ body {
     margin: 4px 2px;
     cursor: pointer;
 
+  }
+
+  #sendContantMessage{
+    background-color: rgb(175, 76, 106);
+    border: none;
+    color: white;
+    width: 10em;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    padding: 16px 32px;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+
+
+  .informationDiv{
+      background-color: white;
+      width: 100%;
+  }
+
+  #googleMap{
+      display: flex;
+      flex-flow: column;
+      align-items: center;  
+      background-color: white;
+      width: 100%;
   }
 
 #footer{
@@ -449,44 +481,67 @@ body {
        width: 100%;
     }
 
-    
-
     #header{
         max-width: 100%;
     }
 
+    /* .logInForm{
+       
+        
+       
+        
+        height: 3em;
+    } */
+
     #headerDivForLoginIn{
-        max-width: 100%;
+        width: 100%;
+        height: 100%;
+        flex-flow: row wrap;
     }
 
     .meny{
         max-width: 100%;
-       
-        
+        height: 5em;
+        justify-content: center;
+        font-size: 1.5em;
+             
     }
     .menyList{
-       
-        justify-content: center;
+        justify-content: space-around;
+        align-items: center;
+        padding-right: 2em;
         flex-flow: row wrap;
-        height: 2em;
+        height: 1em;
     }
     .productMeny{
-        max-width: 100%
-        
-
+        max-width: 100%;
+        height: 100%;
+        /* height: 5em; */
         
     }
     .productMenyList{
-        height: 2em;
+        /* height: 1em; */
         flex-flow: row wrap;
+        padding-bottom: 1em;
+        
     }
 
     .content{
         max-width: 100%;
+        padding-top: 1em;
+        padding-bottom: 1em;
     }
     .contentPicture{
         max-width: 100%;
     }
+
+    #googleMap{
+        max-width: 100%;
+    }
+    #googleMapFrame{
+        max-width: 100%;
+    }
+
     #footer{
         max-width: 100%;
     }

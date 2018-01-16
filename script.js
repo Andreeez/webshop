@@ -1,48 +1,3 @@
-// var logginModal = function() {
-//     var content, title = 'Logga in';
-//     content  = '<form><label>Användarnamn</label>';
-//     content += '<input id="username" type="text" />';
-//     content += '<label>Lösenord</label>';
-//     content += '<input id="password" type="password" />';
-//     content += '<div class="button" onclick="signIn()">Logga in</div><form>';
-//     showModal(title, content);
-// };
-
-// var signIn = function(){
-//     if(sessionStorage.userId !=null){
-//         inLogged();
-//     } else {
-//         $(".button").click(function(){
-//             var username = $("#username").val()
-//             for(var i = 0; i < kundLista.length; i++){
-//                 if(kundLista[i].email == username){
-//                     var password = $("#password").val()
-//                         if(kundLista[i].username == password){
-//                             sessionStorage.setItem("userID",username);
-//                             window.location.reload();
-//                         } else {
-//                             Alert("fel lösen");
-//                             console.log("fel lösen");
-//                         } 
-//                 } else {
-//                     alert("fel användarnamn");
-//                     console.log("fel användarnamn");
-//                 }
-//             }
-//         })
-//     }
-// }
-
-// var showModal = function(title, content) {
-//     var html;
-//     closeModal();
-//     html  = '<div class="modal"><div class="mcontent">';
-//     html += '<div class="mtitle">'+title+'<i class="fa fa-times" onclick="closeModal()"></i></div>';
-//     html += '<div class="mhtml">'+content+'</div></div></div>';
-//     $('body').prepend(html);
-// };
-// var closeModal = function(){ $('.modal').remove(); };
-
 $(document).ready(function(){
 var categoryList;
 // var shoppingCart = [];
@@ -172,16 +127,6 @@ logginModal = function(){
     $(".register").show();
 }
 
-
-// $(".logInButton").click(function(){
-//     $("#logInForm").show();
-//     $("#username").show();
-//     $("#password").show();
-//     $(".logInButton2").show();
-//     $(".register").show();
-// })
-
-
 $(".register").click(function(){
     registerMember();
 });
@@ -194,8 +139,8 @@ $(".register").click(function(){
             var mainCategoryName = "<li class='menuItems' onclick='showUnderCategory(" + [i] + "); showProductList(" + [i] + ")'><a href='#'>" + categoryList[i].mainCategory + "</a></li>";
             $(".menyList").append(mainCategoryName);
         }
-        $(".menyList").append("<li><a href='#'>Kontakt</a></li>");
-        $(".menyList").append("<li><a href='#'>Information</a></li>");
+        $(".menyList").append("<li><a href='#' onclick='showMap()'>Kontakt</a></li>");
+        $(".menyList").append("<li><a href='#' onclick='showInformation()'>Information</a></li>");
     }
 
 // Visa underkategorier
@@ -382,12 +327,65 @@ $(".register").click(function(){
             kundLista = JSON.parse(localStorage.getItem("newMember"));
         }
 
+        kundLista = JSON.parse(localStorage.getItem("newMember"));
+
 
         // // var newUser = [];
         // newUser.push({id: 4, name: $(".registerName").val(), email: $(".registerEmail").val(), password: $(".registerPassword").val(), nyhetsbrev: "Nej"});
         // localStorage.setItem("pushNewMember", JSON.stringify(newUser));
         // newUser = JSON.parse(localStorage.getItem("pushNewMember"));
     }
+
+
+    showMap = function(){
+        
+        $(".content").html("");
+        
+        // var mapProp= {
+        //         center:new google.maps.LatLng(51.508742,-0.120850),
+        //         zoom:5,
+        //     };
+            // var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+            var content
+            content = '<div id="googleMap">';
+            // content += '<h1>Kontakta oss</h1>';
+            content += '<iframe id="googleMapFrame" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2131.2630650788096!2d11.980975839095084!3d57.711989108829805!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x464ff37d9f2d65d9%3A0x2fafb67ea7a3e2da!2sKruthusgatan+17%2C+411+04+G%C3%B6teborg!5e0!3m2!1ssv!2sse!4v1516049753635" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>';
+            content += '<h1>Kontakta oss</h1>';
+            content += '<form>';
+            content += '<input type="text" placeholder="namn"></input></br></br>';
+            content += '<input type="email" placeholder="Email"></input></br></br>';
+            content += '<input type="tel" placeholder="Telefonnummer"></input></br></br>';
+            content += '<textarea>Skriv ditt meddelande här</textarea></br></br>';
+            // content += '<input type="text" value="Meddelande"></input></br></br>';
+            content += '<button id="sendContantMessage">Skicka Meddelande</button></br></br>';
+            content += '</form>';
+            content += '</div>';
+            $(".content").append(content);
+            console.log(content);
+        
+    }   
+
+
+    showInformation = function(){
+        $(".content").html("");
+        var content
+        content = '<div class="informationDiv">';
+        content += '<h1>Information</h1>';
+        content += '<h3>Kundtjänst</h3>';
+        content += '<p>Kundtjänst - LOREM LOREM lorem lorem lorem lorem ipsum ipsum </p>';
+        content += '<h3>Almänna villkor</h3>';
+        content += '<p>Allmänna villkor - LOREM LOREM LOREM LOREM LOREM</p>';
+        content += '<h3>Policy</h3>';
+        content += '<p>Policy - LOREM LOREM LOREM LOREM LOREM</p>';
+        content += '<h3>Frakt & Returer</h3>';
+        content += '<p>Frakt & Returer - LOREM LOREM LOREM LOREM LOREM</p>';
+        content += '</div>';
+
+        $(".content").append(content);
+        }
+
+
+
 
 
 ///
@@ -452,11 +450,11 @@ if(sessionStorage.admin != null ){
         listaKunder = function(){
             $(".content").html("");
 
-            if(localStorage.newMember=!null){
-                newMember = JSON.parse(localStorage.getItem("newMember"));
+            if(localStorage.members!=null){
+                members = JSON.parse(localStorage.getItem("newMember"));
 
-                for(var i=0; i < newMember.length; i++){
-                    $(".content").append("<li>" + "Användare" + newMember[i].id + "</br>" + "email: " + newMember[i].email + "</br>"  + "lösenord: " + newMember[i].password + "</br>" + "</br>" + "</li>");
+                for(var i=0; i < members.length; i++){
+                    $(".content").append("<li>" + "Användare" + members[i].id + "</br>" + "email: " + members[i].email + "</br>"  + "lösenord: " + members[i].password + "</br>" + "</br>" + "</li>");
                 }
 
             } else {
@@ -478,10 +476,10 @@ if(sessionStorage.admin != null ){
             // }
 showCustomerNewsLetter = function(){
 
-    member = JSON.parse(localStorage.getItem("newMember"));
-    for(var i = 0; i < member.length; i++){
-        if(member[i].nyhetsbrev == "JA");
-        $(".content").append("<li>" + member[i].email + "," + "</li>");
+    members = JSON.parse(localStorage.getItem("newMember"));
+    for(var i = 0; i < members.length; i++){
+        if(members[i].nyhetsbrev == "JA");
+        $(".content").append("<li>" + members[i].email + "," + "</li>");
     }
   
     
