@@ -1,11 +1,8 @@
 body {
    margin: 0px 0px 0px 0px;
    height: 100vh;
-   
    font-family: 'Quattrocento Sans', sans-serif;  
    text-align: center;
-   background-color: red;
-
 }
 
 #container {
@@ -40,23 +37,11 @@ body {
    
 }
 
-
-
-/* .headerPicture {
-    width: 100%;
-    height: 10em;
-    background-size: cover;
-    background-repeat: no-repeat;
-
-} */
-
  .meny {
     height: 2em;
-    /* width: 1200px; */
     background-color: rgb(73, 72, 72);
     display: flex;
     flex-flow: row nowrap;    
-    
 }
 
 .menyList{
@@ -92,12 +77,10 @@ body {
 .menyList, .productMenyList, a{
     color: white;
     text-decoration: none;
-
 }
 
 .menyList a:active{
     color: red;
-    
 }
 .menyList a:hover{
     color: white;
@@ -141,7 +124,6 @@ body {
     margin: 4px 2px;
     cursor: pointer;
 }
-
 
 .content {
     width: 1200px;
@@ -216,11 +198,9 @@ body {
     width: 700px;
 }
 
-
 .cartProductBox{
     display: flex;
     flex-flow: row wrap;
-    
 }
 
 .cartProductImage{
@@ -280,10 +260,8 @@ body {
   }
 
   .registerForm{
-      
       width: 100%;
       display: flex;
-      
       flex-flow: column;
       background-color: white;
   }
@@ -355,7 +333,6 @@ body {
     list-style: none;
     width: 30%;
     margin: auto;
-    /* background-color: red; */
 }
 
 #moneyAlt{
@@ -370,7 +347,6 @@ body {
     margin: auto;
     width: 40%;
     list-style: none;
-    /* background-color: aqua;  */
 }
 #socialMediaUs{
     display: flex;
@@ -378,50 +354,7 @@ body {
     margin: auto;
     list-style: none;
     width: 30%;
-        /* background-color: yellow; */
 }
-
- /*.menyList {
-    display: flex;
-    justify-content: space-around;
-    width: 500px;
-    background-color: brown;
-    height: 2em;
-    list-style: none;
-    
-           
-}
-
-.productMenyList {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    list-style: none;
-    font-size: 2em;
-    text-decoration: none;
-    color: green;
-    font-size: 1em;
-    width: 500px;
-    
-}
-
-.productMenyList a:active {
-    color: green;
-}
-.productMenyList a:hover {
-    color: red;
-}
-.productImage {
-    height: 200px;
-    width: 200px;
-} */
-
-
-/* .button {
-    background-color: green;
-    width: 5em;
-} */
-
 
 #headerForCartandLogin div {
     float: right;
@@ -443,39 +376,6 @@ body {
     transition: 0.25s;
 }
 
-.modal {
-    position: fixed; display: flex;
-    width: 100%; height: 100vh; z-index: 101;
-    background-color: rgba(0, 0, 0, 0.1); 
-    justify-content: center;
-    align-items: center;
-}
-
-.mcontent {
-    flex: 1; border-radius: 3px; 
-    max-width: 370px; padding: 5px;
-    background-color: #2196f3;
-}
-
-.mtitle {
-    color: #fff; cursor: default;
-    padding: 0px 5px 5px 5px; 
-}
-.mtitle i { float: right; cursor: pointer; transition: 0.25s; font-size: 1.25em; }
-.mtitle i:hover { transition: 0.25s; color: #777; }
-
-.mhtml {
-    width: 100%; background-color: #fff;
-    min-height: 100px; padding: 10px;
-    font-size: 0.9em;
-}
-
-.mhtml p {
-    margin: 0px;
-    color: #1616ca;
-    padding-bottom: 10px;
-}
-
 @media all and (max-width: 560px) {
     #container{
        width: 100%;
@@ -484,14 +384,6 @@ body {
     #header{
         max-width: 100%;
     }
-
-    /* .logInForm{
-       
-        
-       
-        
-        height: 3em;
-    } */
 
     #headerDivForLoginIn{
         width: 100%;
@@ -515,15 +407,17 @@ body {
     }
     .productMeny{
         max-width: 100%;
-        height: 100%;
-        /* height: 5em; */
-        
+        height: 100%;              
     }
+
+    li#startMeny {order:1;}
+    li.menuItems {order:4;}
+    li#kontaktMeny {order:2;}
+    li#informationMeny{order:3};
+    
     .productMenyList{
-        /* height: 1em; */
         flex-flow: row wrap;
         padding-bottom: 1em;
-        
     }
 
     .content{
@@ -548,7 +442,6 @@ body {
 
     #aboutUs{
         width: 100%;
-
     }
 
     #contactUs{
