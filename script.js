@@ -190,7 +190,7 @@ $(".register").click(function(){
 //Lägg till produkter i localstorage för att visas i Varukorgen
     addToCart = function(i){
 
-        var product = productList[i];
+        var product = productList[i-1];
         createCart = JSON.parse(localStorage.getItem("pushProduct"));
         createCart.push(product);
         localStorage.setItem("pushProduct", JSON.stringify(createCart));
